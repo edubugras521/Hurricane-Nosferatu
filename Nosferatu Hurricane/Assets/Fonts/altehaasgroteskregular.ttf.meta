@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b1ef2d597f3e8094b97b057be2193b60
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Alte Haas Grotesk
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 910ef23d3b1416245a4c8d20eb460b96, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
