@@ -9,6 +9,7 @@ public class RatControl : MonoBehaviour
     private GameObject Player;
     private BoxCollider ratCollider;
     private EnemyControl enemyControl;
+    private RatTrapScript ratTrapScript;
 
     Vector3 directionRat = Vector3.zero;
 
@@ -22,6 +23,7 @@ public class RatControl : MonoBehaviour
         ratCollider = GetComponent<BoxCollider>();
         Player = GameObject.Find("Player");
         enemyControl = FindObjectOfType<EnemyControl>();
+        ratTrapScript = FindObjectOfType<RatTrapScript>();
     }
 
     // Update is called once per frame
@@ -65,6 +67,14 @@ public class RatControl : MonoBehaviour
         {
             ControlRat = false;
             ratCollider.enabled = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Guard"))
+        {
+            ratTrapScript.ratTrapAi++;
         }
     }
 
