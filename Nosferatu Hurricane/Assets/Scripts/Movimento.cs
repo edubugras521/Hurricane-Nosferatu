@@ -9,7 +9,7 @@ public class Movimento : MonoBehaviour
     public GameObject levelManager;
     public GameObject footstepEffects;
     public float footstepInterval;
-
+    public LayerMask guardLayerMask;
     public RatControl ratControl;
     public ShadowControl shadowControl;
     public PsychicControl psychicControl;
@@ -63,7 +63,18 @@ public class Movimento : MonoBehaviour
     {
         if (outro.CompareTag("Detection"))
         {
-            levelManager.GetComponent<LevelManager>().PlayerDetected();
+            GameObject guard = outro.transform.parent.gameObject;
+            Vector3 guardDirection = transform.position - guard.transform.position;
+            Ray ray = new Ray(guard.transform.position, guardDirection.normalized);
+            Debug.DrawRay(ray.origin, ray.direction * 15, Color.magenta);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 15, ~guardLayerMask))
+            {
+                if (hit.transform == transform)
+                {
+                        levelManager.GetComponent<LevelManager>().PlayerDetected();
+                }
+            }
         }
     }
 }
