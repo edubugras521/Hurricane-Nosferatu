@@ -8,7 +8,7 @@ public class RatControl : MonoBehaviour
     private CharacterController ratController;
     private GameObject Player;
     private BoxCollider ratCollider;
-    private EnemyControl enemyControl;
+    private EnemyEffects enemyControl;
 
     Vector3 directionRat = Vector3.zero;
 
@@ -21,7 +21,7 @@ public class RatControl : MonoBehaviour
         ratController = GetComponent<CharacterController>();
         ratCollider = GetComponent<BoxCollider>();
         Player = GameObject.Find("Player");
-        enemyControl = FindObjectOfType<EnemyControl>();
+        enemyControl = FindObjectOfType<EnemyEffects>();
     }
 
     // Update is called once per frame
@@ -57,11 +57,11 @@ public class RatControl : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Detection"))
+        if (other.gameObject.CompareTag("Detection") && ControlRat)
         {
             enemyControl.followRat = true;
         }
-        if (other.gameObject.CompareTag("Guard"))
+        if (other.gameObject.CompareTag("Guard") && ControlRat)
         {
             ControlRat = false;
             ratCollider.enabled = false;

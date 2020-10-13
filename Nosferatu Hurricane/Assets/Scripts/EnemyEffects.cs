@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyControl : MonoBehaviour
+public class EnemyEffects : MonoBehaviour
 {
     public GameObject player;
     public GameObject rat;
@@ -29,21 +29,6 @@ public class EnemyControl : MonoBehaviour
 
     void Update()
     {
-        Vector3 direcao = player.transform.position - guard.position;
-        Ray raio = new Ray(guard.position, direcao.normalized);
-        Debug.DrawRay(raio.origin, raio.direction * 30, Color.magenta);
-        RaycastHit hit;
-        if (Physics.Raycast(raio, out hit, range, playerLayer))
-        {
-            if (hit.transform == player.transform)
-            {
-                if (Vector3.Angle(raio.direction, guard.forward) < 30)
-                {
-                    levelManager.GetComponent<LevelManager>().PlayerDetected();
-                }
-            }
-        }
-
         if (activateTimer)
         {
             timer += Time.deltaTime;
