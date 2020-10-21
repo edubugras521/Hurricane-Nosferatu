@@ -6380,7 +6380,7 @@ MonoBehaviour:
   m_RenderTargetHeight: 512
   m_DistanceFade: 0.625
   m_EdgeFade: 0
-  m_ExcludeBackfaces: 1
+  m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
   m_MinVariance: 0.1
   m_OutOfBoundArea: 2
@@ -6403,7 +6403,7 @@ MonoBehaviour:
   m_RenderTargetHeight: 512
   m_DistanceFade: 0.625
   m_EdgeFade: 0
-  m_ExcludeBackfaces: 1
+  m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
   m_MinVariance: 0.1
   m_OutOfBoundArea: 2
@@ -6426,7 +6426,7 @@ MonoBehaviour:
   m_RenderTargetHeight: 512
   m_DistanceFade: 0.625
   m_EdgeFade: 0
-  m_ExcludeBackfaces: 1
+  m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
   m_MinVariance: 0.1
   m_OutOfBoundArea: 2
@@ -6449,7 +6449,7 @@ MonoBehaviour:
   m_RenderTargetHeight: 512
   m_DistanceFade: 0.625
   m_EdgeFade: 0
-  m_ExcludeBackfaces: 1
+  m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
   m_MinVariance: 0.1
   m_OutOfBoundArea: 2
@@ -6472,7 +6472,7 @@ MonoBehaviour:
   m_RenderTargetHeight: 512
   m_DistanceFade: 0.625
   m_EdgeFade: 0
-  m_ExcludeBackfaces: 1
+  m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
   m_MinVariance: 0.1
   m_OutOfBoundArea: 2
@@ -6495,7 +6495,7 @@ MonoBehaviour:
   m_RenderTargetHeight: 512
   m_DistanceFade: 0.625
   m_EdgeFade: 0
-  m_ExcludeBackfaces: 1
+  m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
   m_MinVariance: 0.1
   m_OutOfBoundArea: 2
