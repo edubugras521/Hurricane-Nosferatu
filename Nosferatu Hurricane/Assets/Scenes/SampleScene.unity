@@ -1056,7 +1056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BufferStorage: {fileID: 499691965}
-  m_QualityLevel: 1
+  m_QualityLevel: 2
   m_HDRMask: 1
 --- !u!114 &499691965
 MonoBehaviour:
@@ -3226,7 +3226,7 @@ GameObject:
   - component: {fileID: 1248240182}
   - component: {fileID: 1248240181}
   - component: {fileID: 1248240184}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Porta
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -3241,7 +3241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248240179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 3.37, z: 0.825}
+  m_LocalPosition: {x: -0, y: -0.02, z: 0.825}
   m_LocalScale: {x: 0.15, y: 2.4, z: 1.65}
   m_Children: []
   m_Father: {fileID: 1534015328}
@@ -4270,7 +4270,7 @@ GameObject:
   - component: {fileID: 1551178354}
   - component: {fileID: 1551178353}
   - component: {fileID: 1551178352}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Porta
   m_TagString: DoorLocked
   m_Icon: {fileID: 0}
@@ -6127,14 +6127,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 10
+  far clip plane: 7
   field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_RenderingPath: 0
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6170,14 +6170,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 10
+  far clip plane: 7
   field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_RenderingPath: 0
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6213,14 +6213,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 10
+  far clip plane: 7
   field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_RenderingPath: 0
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6256,14 +6256,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 10
+  far clip plane: 7
   field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_RenderingPath: 0
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6299,14 +6299,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 10
+  far clip plane: 7
   field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_RenderingPath: 0
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6342,14 +6342,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 10
+  far clip plane: 7
   field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_RenderingPath: 0
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6378,7 +6378,7 @@ MonoBehaviour:
   m_MaskInvert: 0
   m_RenderTargetWidth: 512
   m_RenderTargetHeight: 512
-  m_DistanceFade: 0.625
+  m_DistanceFade: 0
   m_EdgeFade: 0
   m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
@@ -6401,7 +6401,7 @@ MonoBehaviour:
   m_MaskInvert: 0
   m_RenderTargetWidth: 512
   m_RenderTargetHeight: 512
-  m_DistanceFade: 0.625
+  m_DistanceFade: 0
   m_EdgeFade: 0
   m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
@@ -6424,7 +6424,7 @@ MonoBehaviour:
   m_MaskInvert: 0
   m_RenderTargetWidth: 512
   m_RenderTargetHeight: 512
-  m_DistanceFade: 0.625
+  m_DistanceFade: 0
   m_EdgeFade: 0
   m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
@@ -6447,7 +6447,7 @@ MonoBehaviour:
   m_MaskInvert: 0
   m_RenderTargetWidth: 512
   m_RenderTargetHeight: 512
-  m_DistanceFade: 0.625
+  m_DistanceFade: 0
   m_EdgeFade: 0
   m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
@@ -6470,7 +6470,7 @@ MonoBehaviour:
   m_MaskInvert: 0
   m_RenderTargetWidth: 512
   m_RenderTargetHeight: 512
-  m_DistanceFade: 0.625
+  m_DistanceFade: 0
   m_EdgeFade: 0
   m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
@@ -6493,7 +6493,7 @@ MonoBehaviour:
   m_MaskInvert: 0
   m_RenderTargetWidth: 512
   m_RenderTargetHeight: 512
-  m_DistanceFade: 0.625
+  m_DistanceFade: 0
   m_EdgeFade: 0
   m_ExcludeBackfaces: 0
   m_BackfacesFade: 0.1
@@ -6619,7 +6619,7 @@ GameObject:
   - component: {fileID: 8321614793062134002}
   - component: {fileID: 9110191015798555980}
   - component: {fileID: 230805863}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Paredes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6964,7 +6964,7 @@ GameObject:
   - component: {fileID: 3428809190885196338}
   - component: {fileID: 1066910052725299142}
   - component: {fileID: 1033811440}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "Ch\xE3o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
