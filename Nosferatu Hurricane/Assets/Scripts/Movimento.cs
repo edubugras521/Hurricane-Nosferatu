@@ -31,7 +31,7 @@ public class Movimento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey && !LevelManager.levelComplete && !LevelManager.levelFailed && !ratControl.ControlRat && !shadowControl.ControlShadow && !psychicControl.activateTimer)
+        if ((Input.GetButton("Horizontal") || Input.GetButton("Vertical")) && !LevelManager.levelComplete && !LevelManager.levelFailed && !ratControl.ControlRat && !shadowControl.ControlShadow && !psychicControl.activateTimer)
         {
             Andar();
         }

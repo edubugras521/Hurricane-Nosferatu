@@ -2505,6 +2505,8 @@ GameObject:
   - component: {fileID: 505180539}
   - component: {fileID: 505180541}
   - component: {fileID: 505180540}
+  - component: {fileID: 505180543}
+  - component: {fileID: 505180542}
   m_Layer: 0
   m_Name: Guarda
   m_TagString: Guard
@@ -2520,7 +2522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505180533}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.76, y: -0.15, z: -3.88}
+  m_LocalPosition: {x: 1.98, y: -0.15, z: -5.43}
   m_LocalScale: {x: 1, y: 0.85, z: 1}
   m_Children:
   - {fileID: 973494051}
@@ -2660,6 +2662,52 @@ MonoBehaviour:
   m_RaycastLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!195 &505180542
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505180533}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.49999905
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.9999999
+  m_BaseOffset: 0.99999994
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &505180543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505180533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2d7fb888c345148b2393204971e0d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 998376242}
+  playerDistance: 0
+  awareAI: 0
+  AIMoveSpeed: 3
+  damping: 6
+  isPatrol: 1
+  footstepEffects: {fileID: 1715001517889697749, guid: cc59864ace6148b4ea25f54eeef6fe66,
+    type: 3}
+  navPoint: []
+  agent: {fileID: 505180542}
+  destPoint: 0
+  goal: {fileID: 998376242}
 --- !u!65 &507333059
 BoxCollider:
   m_ObjectHideFlags: 0
