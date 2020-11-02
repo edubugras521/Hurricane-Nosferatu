@@ -15,6 +15,11 @@ public class RatControl : MonoBehaviour
     public float ratVelocity;
     public float ratVelRotacao;
 
+    public GameObject ratFOV;
+    public GameObject playerFOV;
+
+    public ShadowControl shadowControl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,15 +34,21 @@ public class RatControl : MonoBehaviour
     {
         transform.forward = Vector3.RotateTowards(transform.forward, directionRat, ratVelRotacao * Time.deltaTime, 0.0f);
 
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !ControlRat)
+        transform.position = new Vector3(transform.position.x, -0.8f, transform.position.z);
+
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !ControlRat && !shadowControl.ControlShadow)
         {
             ControlRat = true;
             ratCollider.enabled = true;
+            ratFOV.SetActive(true);
+            playerFOV.SetActive(false);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftControl) && ControlRat)
+        else if (Input.GetKeyDown(KeyCode.LeftControl) && ControlRat && !shadowControl.ControlShadow)
         {
             ControlRat = false;
             ratCollider.enabled = false;
+            ratFOV.SetActive(false);
+            playerFOV.SetActive(true);
         }
 
         if (ControlRat)
@@ -65,6 +76,8 @@ public class RatControl : MonoBehaviour
         {
             ControlRat = false;
             ratCollider.enabled = false;
+            ratFOV.SetActive(false);
+            playerFOV.SetActive(true);
         }
     }
 

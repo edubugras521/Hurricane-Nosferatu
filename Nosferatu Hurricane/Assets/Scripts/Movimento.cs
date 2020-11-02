@@ -37,6 +37,8 @@ public class Movimento : MonoBehaviour
         }
 
         transform.forward = Vector3.RotateTowards(transform.forward, direcao, velRotacao * Time.deltaTime, 0.0f);
+
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
     }
 
     void Andar()

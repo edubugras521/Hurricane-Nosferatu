@@ -15,6 +15,11 @@ public class ShadowControl : MonoBehaviour
     public float shadowVelocity;
     public float shadowVelRotacao;
 
+    public GameObject shadowFOV;
+    public GameObject playerFOV;
+
+    public RatControl ratControl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,21 +34,24 @@ public class ShadowControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.forward = Vector3.RotateTowards(transform.forward, directionShadow, shadowVelRotacao * Time.deltaTime, 0.0f);
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !ControlShadow)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !ControlShadow && !ratControl.ControlRat)
         {
             ControlShadow = true;
             shadowCollider.enabled = true;
             Player.GetComponent<Interacao>().enabled = false;
             interacaoShadow.enabled = true;
+            shadowFOV.SetActive(true);
+            playerFOV.SetActive(false);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift) && ControlShadow)
+        else if (Input.GetKeyDown(KeyCode.LeftShift) && ControlShadow && !ratControl.ControlRat)
         {
             ControlShadow = false;
             shadowCollider.enabled = false;
             Player.GetComponent<Interacao>().enabled = true;
             interacaoShadow.enabled = false;
+            shadowFOV.SetActive(false);
+            playerFOV.SetActive(true);
         }
 
         if (ControlShadow)
@@ -56,8 +64,12 @@ public class ShadowControl : MonoBehaviour
         }
         else
         {
-            transform.position = new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z);
+            transform.position = new Vector3(Player.transform.position.x, 0, Player.transform.position.z);
             transform.rotation = Player.transform.rotation;
         }
+
+        transform.forward = Vector3.RotateTowards(transform.forward, directionShadow, shadowVelRotacao * Time.deltaTime, 0.0f);
+
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
     }
 }
