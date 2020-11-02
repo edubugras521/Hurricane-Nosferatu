@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
 {
     public GameObject CreditsImage;
     public GameObject BackButton;
     public GameObject InstructionsImage;
+
+    public Sprite SourceSprite;
+
+    public GameObject[] Buttons;
 
     public void StartGame()
     {
@@ -36,5 +41,10 @@ public class MenuScript : MonoBehaviour
         CreditsImage.SetActive(false);
         InstructionsImage.SetActive(false);
         BackButton.SetActive(false);
+    }
+
+    public void CursorOver()
+    {
+        Buttons[0].GetComponent<Image>().sprite = SourceSprite;
     }
 }
