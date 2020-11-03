@@ -11,12 +11,7 @@ public class LevelManager : MonoBehaviour
     public static bool levelComplete = false;
     public static bool levelFailed = false;
     public static bool resetLevel = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static int currentLevel = 0;
 
     // Update is called once per frame
     void Update()
@@ -75,6 +70,19 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
+        if(currentLevel >= 0 && currentLevel < 8)
+        {
+            currentLevel++;
+            Debug.Log(currentLevel);
+        }
 
+        levelComplete = false;
+        levelFailed = false;
+        resetLevel = false;
+        killScreen.alpha = 0;
+        killScreen.gameObject.SetActive(false);
+        failScreen.alpha = 0;
+        failScreen.gameObject.SetActive(false);
+        player.GetComponent<RespawnManager>().Respawn();
     }
 }

@@ -77,16 +77,6 @@ public class Movimento : MonoBehaviour
                 {
                         levelManager.GetComponent<LevelManager>().PlayerDetected();
                 }
-
-                if (hit.transform == transform && guardTerrified)
-                {
-                    Debug.Log("detection avoided");
-                }
-
-                else
-                {
-                    Debug.Log(hit.transform.gameObject.name);
-                }
             }
         }
     }

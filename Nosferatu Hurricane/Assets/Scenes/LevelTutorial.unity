@@ -1442,7 +1442,7 @@ GameObject:
   - component: {fileID: 272737110}
   - component: {fileID: 272737112}
   - component: {fileID: 272737111}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ProxDetectionRadius
   m_TagString: Detection
   m_Icon: {fileID: 0}
@@ -2507,7 +2507,7 @@ GameObject:
   - component: {fileID: 505180540}
   - component: {fileID: 505180543}
   - component: {fileID: 505180542}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Guarda1
   m_TagString: Guard
   m_Icon: {fileID: 0}
@@ -5053,7 +5053,7 @@ GameObject:
   - component: {fileID: 973494052}
   - component: {fileID: 973494056}
   - component: {fileID: 973494055}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head
   m_TagString: Guard
   m_Icon: {fileID: 0}
@@ -5323,7 +5323,7 @@ MonoBehaviour:
   footstepInterval: 0.5
   guardLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4
   ratControl: {fileID: 0}
   shadowControl: {fileID: 0}
   psychicControl: {fileID: 0}
@@ -5571,7 +5571,7 @@ GameObject:
   - component: {fileID: 1018961250}
   - component: {fileID: 1018961252}
   - component: {fileID: 1018961251}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FieldofView
   m_TagString: Detection
   m_Icon: {fileID: 0}
@@ -6522,6 +6522,15 @@ MonoBehaviour:
   openAngle: {x: 0, y: -0.7, z: 0, w: 0.7}
   rangidoEffects: {fileID: 1715001517889697749, guid: b47ab85a36464954d92ee4e3b02061e6,
     type: 3}
+  lockedLevel0: 0
+  lockedLevel1: 0
+  lockedLevel2: 0
+  lockedLevel3: 0
+  lockedLevel4: 0
+  lockedLevel5: 0
+  lockedLevel6: 0
+  lockedLevel7: 0
+  lockedLevel8: 0
 --- !u!65 &1284838850
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6597,6 +6606,15 @@ MonoBehaviour:
   doorPivot: {fileID: 1574086339}
   openAngle: {x: 0, y: -0.7, z: 0, w: 0.7}
   rangidoEffects: {fileID: 0}
+  lockedLevel0: 0
+  lockedLevel1: 0
+  lockedLevel2: 0
+  lockedLevel3: 0
+  lockedLevel4: 0
+  lockedLevel5: 0
+  lockedLevel6: 0
+  lockedLevel7: 0
+  lockedLevel8: 0
 --- !u!65 &1296960911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8298,6 +8316,15 @@ MonoBehaviour:
   doorPivot: {fileID: 1748584279}
   openAngle: {x: 0, y: -0.7, z: 0, w: 0.7}
   rangidoEffects: {fileID: 0}
+  lockedLevel0: 0
+  lockedLevel1: 0
+  lockedLevel2: 0
+  lockedLevel3: 0
+  lockedLevel4: 0
+  lockedLevel5: 0
+  lockedLevel6: 0
+  lockedLevel7: 0
+  lockedLevel8: 0
 --- !u!65 &1551178353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10397,7 +10424,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 73303690}
-        m_MethodName: RetryLevel
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
