@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
 {
-    public GameObject CreditsImage;
+    public GameObject OptionsCanvas;
+    public GameObject MenuCanvas;
     public GameObject BackButton;
-    public GameObject InstructionsImage;
+    public GameObject CreditsImage;
 
     public Sprite SourceSprite;
 
@@ -19,15 +20,17 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene("LevelTutorial");
     }
 
-    public void CreditsScreen()
+    public void OptionsScreen()
     {
-        CreditsImage.SetActive(true);
+        Buttons[2].GetComponent<Image>().sprite = null;
+        OptionsCanvas.SetActive(true);
+        MenuCanvas.SetActive(false);
         BackButton.SetActive(true);
     }
 
-    public void InstructionsScreen()
+    public void CreditsScreen()
     {
-        InstructionsImage.SetActive(true);
+        CreditsImage.SetActive(true);
         BackButton.SetActive(true);
     }
 
@@ -38,8 +41,9 @@ public class MenuScript : MonoBehaviour
 
     public void BackToMenu()
     {
+        OptionsCanvas.SetActive(false);
+        MenuCanvas.SetActive(true);
         CreditsImage.SetActive(false);
-        InstructionsImage.SetActive(false);
         BackButton.SetActive(false);
     }
 
