@@ -66,15 +66,26 @@ public class Movimento : MonoBehaviour
         if (outro.CompareTag("Detection"))
         {
             GameObject guard = outro.transform.parent.gameObject;
+            bool guardTerrified = guard.GetComponent<EnemyController>().IsGuardTerrified();
             Vector3 guardDirection = transform.position - guard.transform.position;
             Ray ray = new Ray(guard.transform.position, guardDirection.normalized);
             Debug.DrawRay(ray.origin, ray.direction * 15, Color.magenta);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 15, ~guardLayerMask))
             {
-                if (hit.transform == transform)
+                if (hit.transform == transform && !guardTerrified)
                 {
                         levelManager.GetComponent<LevelManager>().PlayerDetected();
+                }
+
+                if (hit.transform == transform && guardTerrified)
+                {
+                    Debug.Log("detection avoided");
+                }
+
+                else
+                {
+                    Debug.Log(hit.transform.gameObject.name);
                 }
             }
         }

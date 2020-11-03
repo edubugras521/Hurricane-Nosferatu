@@ -12,6 +12,7 @@ TagManager:
   - Detection
   - Shadow
   - Psychic
+  - MedicineBox
   layers:
   - Default
   - TransparentFX

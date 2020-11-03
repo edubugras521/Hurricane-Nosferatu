@@ -29,29 +29,9 @@ public class EnemyEffects : MonoBehaviour
 
     void Update()
     {
-        if (activateTimer)
-        {
-            timer += Time.deltaTime;
-        }
-
-        if(timer >= 2)
-        {
-            activateTimer = false;
-            timer = 0;
-            enemyRenderer.material.color = Color.blue;
-        }
-
         if (followRat)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(rat.transform.position.x, transform.position.y, rat.transform.position.z), followSpeed * Time.deltaTime);
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Psychic"))
-        {
-            enemyRenderer.material.color = Color.red;
-            activateTimer = true;
         }
     }
 }
