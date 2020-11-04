@@ -74,6 +74,36 @@ public class Interacao : MonoBehaviour
                 }
             }
 
+            if (hit.collider.CompareTag("Candle"))
+            {
+
+                targetObject = hit.collider.gameObject;
+                if (targetObject.GetComponent<CandleControl>().IsLit())
+                {
+                    InspectText.text = "[E]: Apagar Vela";
+
+                    if (Input.GetButtonDown("Interact"))
+                    {
+                        targetObject.GetComponent<CandleControl>().TurnOff();
+                    }
+                }
+                
+            }
+
+            if (hit.collider.CompareTag("Torch"))
+            {
+                targetObject = hit.collider.gameObject;
+                if (targetObject.GetComponent<TorchControl>().IsLit())
+                {
+                    InspectText.text = "[E]: Apagar Tocha";
+
+                    if (Input.GetButtonDown("Interact"))
+                    {
+                        targetObject.GetComponent<TorchControl>().TurnOff();
+                    }
+                }   
+            }
+
             if (hit.collider.CompareTag("Wall"))
             {
                 InspectText.text = "";

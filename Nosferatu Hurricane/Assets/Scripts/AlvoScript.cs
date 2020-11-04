@@ -26,10 +26,9 @@ public class AlvoScript : MonoBehaviour
     void Update()
     {
         LevelCheck();
-        gameObject.SetActive(isActive);
     }
 
-    private void LevelCheck()
+    public void LevelCheck()
     {
         currentLevel = LevelManager.currentLevel;
 
@@ -37,33 +36,50 @@ public class AlvoScript : MonoBehaviour
         {
             isActive = activeLevel0;
         }
+
         if (currentLevel == 1 && (isActive != activeLevel1))
         {
             isActive = activeLevel1;
         }
+
         if (currentLevel == 2 && (isActive != activeLevel2))
         {
             isActive = activeLevel2;
         }
+
         if (currentLevel == 3 && (isActive != activeLevel3))
         {
             isActive = activeLevel3;
         }
+
         if (currentLevel == 4 && (isActive != activeLevel4))
         {
             isActive = activeLevel4;
         }
+
         if (currentLevel == 5 && (isActive != activeLevel5))
         {
             isActive = activeLevel5;
         }
+
         if (currentLevel == 6 && (isActive != activeLevel6))
         {
             isActive = activeLevel6;
         }
+
         if (currentLevel == 7 && (isActive != activeLevel7))
         {
             isActive = activeLevel7;
+        }
+
+        if (isActive)
+        {
+            gameObject.SetActive(true);
+        }
+
+        else
+        {
+            gameObject.SetActive(false);
         }
     }
 }

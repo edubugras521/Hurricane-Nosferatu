@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3676918068376905880
+--- !u!1 &962403986604621055
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,106 +8,119 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 205384120110078070}
+  - component: {fileID: 4251534985894956780}
+  - component: {fileID: 5069780170880398554}
+  - component: {fileID: 1542468987054376995}
+  - component: {fileID: 1106949143048097656}
   m_Layer: 0
-  m_Name: CAIXA 2
-  m_TagString: Untagged
+  m_Name: Caixa 2
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &205384120110078070
+--- !u!4 &4251534985894956780
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3676918068376905880}
+  m_GameObject: {fileID: 962403986604621055}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 7.69, y: -0.9033849, z: -63.75121}
+  m_LocalScale: {x: 176.29588, y: 126.72136, z: 180.59215}
+  m_Children: []
+  m_Father: {fileID: 899155038452234450}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5069780170880398554
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962403986604621055}
+  m_Mesh: {fileID: -1648810932268305027, guid: e8aa4d40e51f651438bc1b31b22bb8e7, type: 3}
+--- !u!23 &1542468987054376995
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962403986604621055}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b3988feef91451e4abd8b6ceb8092cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1106949143048097656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962403986604621055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026788637, y: 0.035710525, z: 0.032061804}
+  m_Center: {x: -0.0000012894161, y: 0.00001476798, z: 0.015424581}
+--- !u!1 &4490248533163289750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 899155038452234450}
+  m_Layer: 0
+  m_Name: Caixa 2
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &899155038452234450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490248533163289750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.29, y: 0, z: -124.15}
+  m_LocalPosition: {x: 3.63, y: 0, z: -118.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8704864032170248320}
+  - {fileID: 4251534985894956780}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &4447119334355805082
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 205384120110078070}
-    m_Modifications:
-    - target: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.03001
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.8892565
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -52.90455
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7055316
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.04717264
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.04717264
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7055315
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 7.6500006
-      objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fef1c37b076ce004babd0356efbbe0aa, type: 2}
-    - target: {fileID: -927199367670048503, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-        type: 3}
-      propertyPath: m_Name
-      value: CAIXA 2 COM UV MAP
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9, type: 3}
---- !u!4 &8704864032170248320 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c1a1fcab53fe3b64f8ccfc2e970f3bf9,
-    type: 3}
-  m_PrefabInstance: {fileID: 4447119334355805082}
-  m_PrefabAsset: {fileID: 0}

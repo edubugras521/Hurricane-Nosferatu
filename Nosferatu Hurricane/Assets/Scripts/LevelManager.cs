@@ -7,16 +7,26 @@ public class LevelManager : MonoBehaviour
     public GameObject player;
     public CanvasGroup killScreen;
     public CanvasGroup failScreen;
+    public CanvasGroup finalScreen;
+    public GameObject alvo0;
+    public GameObject alvo1;
+    public GameObject alvo2;
+    public GameObject alvo3;
+    public GameObject guard0;
+    public GameObject guard1;
+    public GameObject guard2;
+    public GameObject guard3;
 
     public static bool levelComplete = false;
     public static bool levelFailed = false;
     public static bool resetLevel = false;
+    public static bool gameOver = false;
     public static int currentLevel = 0;
 
     // Update is called once per frame
     void Update()
     {
-        if (levelComplete && !levelFailed)
+        if (levelComplete && !levelFailed && !gameOver)
         {
             Cursor.lockState = CursorLockMode.Confined;
             if (killScreen.alpha < 1)
@@ -29,7 +39,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (!levelComplete && levelFailed)
+        if (!levelComplete && levelFailed && !gameOver)
         {
             Cursor.lockState = CursorLockMode.Confined;
             if (failScreen.alpha < 1)
@@ -42,10 +52,28 @@ public class LevelManager : MonoBehaviour
             }
         }
 
+        if (levelComplete && !levelFailed && gameOver)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            if (finalScreen.alpha < 1)
+            {
+                finalScreen.alpha += (1f * Time.deltaTime);
+            }
+        }
+
     }
 
     public void KilledTarget()
     {
+
+        if (currentLevel == 3)
+        {
+            levelComplete = true;
+            gameOver = true;
+            finalScreen.gameObject.SetActive(true);
+            return;
+        }
+
         levelComplete = true;
         killScreen.gameObject.SetActive(true);
     }
@@ -70,7 +98,7 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if(currentLevel >= 0 && currentLevel < 7)
+        if(currentLevel >= 0 && currentLevel < 3)
         {
             currentLevel++;
             Debug.Log(currentLevel);
@@ -83,6 +111,28 @@ public class LevelManager : MonoBehaviour
         killScreen.gameObject.SetActive(false);
         failScreen.alpha = 0;
         failScreen.gameObject.SetActive(false);
+        TargetCheck();
+        GuardasCheck();
         player.GetComponent<RespawnManager>().Respawn();
+    }
+
+    public void TargetCheck()
+    {
+        alvo0.SetActive(true);
+        alvo1.SetActive(true);
+        alvo2.SetActive(true);
+        alvo3.SetActive(true);
+    }
+
+    public void GuardasCheck()
+    {
+        guard0.SetActive(true);
+        guard1.SetActive(true);
+        guard2.SetActive(true);
+        guard3.SetActive(true);
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

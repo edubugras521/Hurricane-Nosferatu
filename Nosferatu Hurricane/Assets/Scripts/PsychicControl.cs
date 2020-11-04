@@ -23,12 +23,12 @@ public class PsychicControl : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && timer < 2)
+        if (Input.GetKeyDown(KeyCode.Space) && timer < 1)
         {
             psychic.SetActive(true);
             activateTimer = true;
         }
-        else if(timer >= 2)
+        else if(timer >= 1)
         {
             psychic.SetActive(false);
             activateTimer = false;
