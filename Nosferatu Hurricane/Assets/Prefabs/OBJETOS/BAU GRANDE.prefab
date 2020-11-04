@@ -38,6 +38,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 820632174908062688}
     m_Modifications:
+    - target: {fileID: -5168173392023753230, guid: 82e86285b7305a24d86d641f5388a81a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cc3d23bf7aacaca4b84be248a611ae58, type: 2}
     - target: {fileID: -4216859302048453862, guid: 82e86285b7305a24d86d641f5388a81a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,6 +103,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BAU GRANDE COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: 1442921180283364936, guid: 82e86285b7305a24d86d641f5388a81a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e0c099a8211794c439b8fdd1c16b2082, type: 2}
+    - target: {fileID: 6725410568112055131, guid: 82e86285b7305a24d86d641f5388a81a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dad17039af531b7478c5b17f6184911b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82e86285b7305a24d86d641f5388a81a, type: 3}
 --- !u!4 &2991727252630979563 stripped

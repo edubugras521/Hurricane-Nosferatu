@@ -98,6 +98,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: RATOEIRA COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: 3207094038442621076, guid: 75b6c3c14ad0baa46ac1ebe31701ff0d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e17b1ec66ea68d4185a6c57fbb15659, type: 2}
+    - target: {fileID: 4123416336868894286, guid: 75b6c3c14ad0baa46ac1ebe31701ff0d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ea621e0d62957f43a4a9f377e4f8c35, type: 2}
+    - target: {fileID: 7451578889532818045, guid: 75b6c3c14ad0baa46ac1ebe31701ff0d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd910d0e3ed3ea244bead02d196708cd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75b6c3c14ad0baa46ac1ebe31701ff0d, type: 3}
 --- !u!4 &6080240967184671587 stripped

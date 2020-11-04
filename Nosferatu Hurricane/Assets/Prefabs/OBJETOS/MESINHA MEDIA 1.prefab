@@ -98,6 +98,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MESINHA GRANDE COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: -567761721305343141, guid: 330fb0bae870a9d4ea485e87c0763fa2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ea621e0d62957f43a4a9f377e4f8c35, type: 2}
+    - target: {fileID: -500565992901701469, guid: 330fb0bae870a9d4ea485e87c0763fa2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e17b1ec66ea68d4185a6c57fbb15659, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 330fb0bae870a9d4ea485e87c0763fa2, type: 3}
 --- !u!4 &6456572733839071619 stripped

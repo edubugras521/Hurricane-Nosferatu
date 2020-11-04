@@ -98,6 +98,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CAIXOTE GRANDE COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: 5732228989417488248, guid: d79b1557911ab6d4089500a63e841e51,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7f379368cc24a974bba66a0452034559, type: 2}
+    - target: {fileID: 8331683278445502905, guid: d79b1557911ab6d4089500a63e841e51,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31596ba8970953149a84403151b510bb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d79b1557911ab6d4089500a63e841e51, type: 3}
 --- !u!4 &7164290299312701140 stripped

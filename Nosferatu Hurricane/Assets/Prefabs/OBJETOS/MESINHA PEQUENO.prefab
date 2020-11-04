@@ -98,6 +98,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MESINHA PEQUENA COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: 1339826826562840781, guid: f1481b8025bbbee43a9f11cb2dcdcc7e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ea621e0d62957f43a4a9f377e4f8c35, type: 2}
+    - target: {fileID: 4488156574079410154, guid: f1481b8025bbbee43a9f11cb2dcdcc7e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b3988feef91451e4abd8b6ceb8092cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1481b8025bbbee43a9f11cb2dcdcc7e, type: 3}
 --- !u!4 &7608423810899798736 stripped

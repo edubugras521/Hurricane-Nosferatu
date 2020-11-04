@@ -38,6 +38,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 257652985137470892}
     m_Modifications:
+    - target: {fileID: -7365518506322404782, guid: 3425be5a067f9b145a553bcfd090d030,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5edf3566d04969d4289f6eb19881f4ea, type: 2}
     - target: {fileID: -4216859302048453862, guid: 3425be5a067f9b145a553bcfd090d030,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,6 +103,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BANCO COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: 3239657580591979818, guid: 3425be5a067f9b145a553bcfd090d030,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b3988feef91451e4abd8b6ceb8092cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3425be5a067f9b145a553bcfd090d030, type: 3}
 --- !u!4 &7490686148588502591 stripped

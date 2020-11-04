@@ -93,11 +93,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1108807146669862080, guid: 8fb875fae451513459f97c4ec0aae4e2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ea621e0d62957f43a4a9f377e4f8c35, type: 2}
     - target: {fileID: -927199367670048503, guid: 8fb875fae451513459f97c4ec0aae4e2,
         type: 3}
       propertyPath: m_Name
       value: VELA COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: 593221250056510139, guid: 8fb875fae451513459f97c4ec0aae4e2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2cd9e033fcb11444ab225a637f60e116, type: 2}
+    - target: {fileID: 7669568048075464824, guid: 8fb875fae451513459f97c4ec0aae4e2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd910d0e3ed3ea244bead02d196708cd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fb875fae451513459f97c4ec0aae4e2, type: 3}
 --- !u!4 &6339800751260337058 stripped
