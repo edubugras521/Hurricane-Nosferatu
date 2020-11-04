@@ -16,7 +16,6 @@ public class DoorControl : MonoBehaviour
     public bool lockedLevel5 = true;
     public bool lockedLevel6 = true;
     public bool lockedLevel7 = true;
-    public bool lockedLevel8 = true;
 
     private bool isOpen = false;
     private bool isLocked = true;
@@ -130,10 +129,6 @@ public class DoorControl : MonoBehaviour
         if (currentLevel == 7 && (isLocked != lockedLevel7))
         {
             isLocked = lockedLevel7;
-        }
-        if (currentLevel == 8 && (isLocked != lockedLevel8))
-        {
-            isLocked = lockedLevel8;
         }
     }
 }

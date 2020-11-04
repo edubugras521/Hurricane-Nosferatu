@@ -70,7 +70,7 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if(currentLevel >= 0 && currentLevel < 8)
+        if(currentLevel >= 0 && currentLevel < 7)
         {
             currentLevel++;
             Debug.Log(currentLevel);
