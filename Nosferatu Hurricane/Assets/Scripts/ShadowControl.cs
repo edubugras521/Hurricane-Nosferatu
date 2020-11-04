@@ -19,6 +19,9 @@ public class ShadowControl : MonoBehaviour
     public GameObject playerFOV;
 
     public RatControl ratControl;
+    public PsychicControl psychicControl;
+
+    public BloodBar bloodBar;
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +32,15 @@ public class ShadowControl : MonoBehaviour
         Player = GameObject.Find("Player");
 
         interacaoShadow.enabled = false;
+
+        bloodBar = FindObjectOfType<BloodBar>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !ControlShadow && !ratControl.ControlRat)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !ControlShadow && !ratControl.ControlRat && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
         {
             ControlShadow = true;
             shadowCollider.enabled = true;
@@ -43,8 +48,9 @@ public class ShadowControl : MonoBehaviour
             interacaoShadow.enabled = true;
             shadowFOV.SetActive(true);
             playerFOV.SetActive(false);
+            StartCoroutine("ShadowBloodDrain");
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift) && ControlShadow && !ratControl.ControlRat)
+        else if (Input.GetKeyDown(KeyCode.LeftShift) && ControlShadow && !ratControl.ControlRat && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
         {
             ControlShadow = false;
             shadowCollider.enabled = false;
@@ -52,6 +58,7 @@ public class ShadowControl : MonoBehaviour
             interacaoShadow.enabled = false;
             shadowFOV.SetActive(false);
             playerFOV.SetActive(true);
+            StopCoroutine("ShadowBloodDrain");
         }
 
         if (ControlShadow)
@@ -71,5 +78,14 @@ public class ShadowControl : MonoBehaviour
         transform.forward = Vector3.RotateTowards(transform.forward, directionShadow, shadowVelRotacao * Time.deltaTime, 0.0f);
 
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+    }
+
+    public IEnumerator ShadowBloodDrain()
+    {
+        while (true)
+        {
+            bloodBar.BloodLeft -= 0.03f;
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }
