@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: a8fdfd63ad8337b4a85f4c091598aafc, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 626451ad3052cdb4db9cb7c7e4362cf2, type: 2}
 --- !u!1 &10153238
 GameObject:
   m_ObjectHideFlags: 0
@@ -8075,7 +8075,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505180533}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6b334c0935829642b595f043fde9963, type: 3}
   m_Name: 
@@ -8087,7 +8087,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505180533}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3417c49995cbcea4aa2a73ebdf103693, type: 3}
   m_Name: 
@@ -8144,7 +8144,7 @@ MonoBehaviour:
   - {fileID: 1048413878}
   agent: {fileID: 505180542}
   destPoint: 0
-  goal: {fileID: 998376242}
+  goal: {fileID: 873992777}
   isTerrified: 0
 --- !u!65 &507333059
 BoxCollider:
@@ -12744,6 +12744,8 @@ MonoBehaviour:
   ratFOV: {fileID: 245343310}
   playerFOV: {fileID: 1415374895435323944}
   shadowControl: {fileID: 1170807568}
+  psychicControl: {fileID: 998376250}
+  bloodBar: {fileID: 0}
 --- !u!65 &873992774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15362,6 +15364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activateTimer: 0
+  timer: 0
 --- !u!114 &998376251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17804,6 +17807,8 @@ MonoBehaviour:
   shadowFOV: {fileID: 1456086567}
   playerFOV: {fileID: 1415374895435323944}
   ratControl: {fileID: 873992773}
+  psychicControl: {fileID: 998376250}
+  bloodBar: {fileID: 0}
 --- !u!136 &1170807569
 CapsuleCollider:
   m_ObjectHideFlags: 0
