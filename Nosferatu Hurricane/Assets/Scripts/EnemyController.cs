@@ -19,6 +19,18 @@ public class EnemyController : MonoBehaviour
 
 	public bool isTerrified = false;
 
+	public bool activeLevel0 = true;
+	public bool activeLevel1 = true;
+	public bool activeLevel2 = true;
+	public bool activeLevel3 = true;
+	public bool activeLevel4 = true;
+	public bool activeLevel5 = true;
+	public bool activeLevel6 = true;
+	public bool activeLevel7 = true;
+
+	private bool isActive = false;
+	private int currentLevel = 0;
+
 	private GameObject closestMedBox;
 	private float footstepTimer = 0;
 	private float footstepInterval = 0.5f;
@@ -34,7 +46,10 @@ public class EnemyController : MonoBehaviour
 	void Update()
 	{
 
-        if (!isTerrified)
+		LevelCheck();
+		gameObject.SetActive(isActive);
+
+		if (!isTerrified)
         {
 			playerDistance = Vector3.Distance(player.position, transform.position);
 
@@ -142,4 +157,42 @@ public class EnemyController : MonoBehaviour
 			return false;
         }
     }
+
+	private void LevelCheck()
+	{
+		currentLevel = LevelManager.currentLevel;
+
+		if (currentLevel == 0 && (isActive != activeLevel0))
+		{
+			isActive = activeLevel0;
+		}
+		if (currentLevel == 1 && (isActive != activeLevel1))
+		{
+			isActive = activeLevel1;
+		}
+		if (currentLevel == 2 && (isActive != activeLevel2))
+		{
+			isActive = activeLevel2;
+		}
+		if (currentLevel == 3 && (isActive != activeLevel3))
+		{
+			isActive = activeLevel3;
+		}
+		if (currentLevel == 4 && (isActive != activeLevel4))
+		{
+			isActive = activeLevel4;
+		}
+		if (currentLevel == 5 && (isActive != activeLevel5))
+		{
+			isActive = activeLevel5;
+		}
+		if (currentLevel == 6 && (isActive != activeLevel6))
+		{
+			isActive = activeLevel6;
+		}
+		if (currentLevel == 7 && (isActive != activeLevel7))
+		{
+			isActive = activeLevel7;
+		}
+	}
 }
