@@ -38,6 +38,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 723091518293694937}
     m_Modifications:
+    - target: {fileID: -4482700029162835330, guid: ad96d11f14b838a4f8165666ed9b178b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ea621e0d62957f43a4a9f377e4f8c35, type: 2}
     - target: {fileID: -4216859302048453862, guid: ad96d11f14b838a4f8165666ed9b178b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,6 +103,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MESINHA MEDIA COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: 1182777060570349597, guid: ad96d11f14b838a4f8165666ed9b178b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8df3f2f84d2ccb4bbed36fa69dd1971, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad96d11f14b838a4f8165666ed9b178b, type: 3}
 --- !u!4 &8515635954904151841 stripped

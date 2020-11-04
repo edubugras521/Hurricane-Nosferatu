@@ -93,11 +93,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1680377855270083015, guid: 01ab55811f003b943899b8fbd34cb623,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8df3f2f84d2ccb4bbed36fa69dd1971, type: 2}
     - target: {fileID: -927199367670048503, guid: 01ab55811f003b943899b8fbd34cb623,
         type: 3}
       propertyPath: m_Name
       value: CAIXOTE PEQUENO COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: 2235261885265260861, guid: 01ab55811f003b943899b8fbd34cb623,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e17b1ec66ea68d4185a6c57fbb15659, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01ab55811f003b943899b8fbd34cb623, type: 3}
 --- !u!4 &4479531542957215084 stripped

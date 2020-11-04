@@ -93,11 +93,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1703399465254020794, guid: 77f62e9a925e49446a38fc29f60de747,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 589585c537df50940a5e51cff0c6ffd1, type: 2}
     - target: {fileID: -927199367670048503, guid: 77f62e9a925e49446a38fc29f60de747,
         type: 3}
       propertyPath: m_Name
       value: BAU PEQUENO COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: -416100360031278953, guid: 77f62e9a925e49446a38fc29f60de747,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d60b1b58ec2b9f54398888c786609859, type: 2}
+    - target: {fileID: 5474813450912049949, guid: 77f62e9a925e49446a38fc29f60de747,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 589585c537df50940a5e51cff0c6ffd1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f62e9a925e49446a38fc29f60de747, type: 3}
 --- !u!4 &2498708018451521071 stripped

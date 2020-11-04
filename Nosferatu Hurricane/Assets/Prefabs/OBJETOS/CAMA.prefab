@@ -38,6 +38,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4744915959690807932}
     m_Modifications:
+    - target: {fileID: -6720851531518828351, guid: e1885f7da44f0da4a94827cbd1cf2b1a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 589585c537df50940a5e51cff0c6ffd1, type: 2}
+    - target: {fileID: -6212408203846340515, guid: e1885f7da44f0da4a94827cbd1cf2b1a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ea621e0d62957f43a4a9f377e4f8c35, type: 2}
+    - target: {fileID: -5053762506007420415, guid: e1885f7da44f0da4a94827cbd1cf2b1a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ea621e0d62957f43a4a9f377e4f8c35, type: 2}
     - target: {fileID: -4216859302048453862, guid: e1885f7da44f0da4a94827cbd1cf2b1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,6 +113,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CAMA COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: 6237747203305584779, guid: e1885f7da44f0da4a94827cbd1cf2b1a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd910d0e3ed3ea244bead02d196708cd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1885f7da44f0da4a94827cbd1cf2b1a, type: 3}
 --- !u!4 &4907786182278607665 stripped

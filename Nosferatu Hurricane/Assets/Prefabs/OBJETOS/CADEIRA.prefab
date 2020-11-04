@@ -38,6 +38,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4900653475899663721}
     m_Modifications:
+    - target: {fileID: -8380565651716245305, guid: 2c32d6c92666c7b4b800e80e3243684d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c401687432e9a6c4fa3bdbacb5b34d38, type: 2}
     - target: {fileID: -4216859302048453862, guid: 2c32d6c92666c7b4b800e80e3243684d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,6 +103,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: CADEIRA
       objectReference: {fileID: 0}
+    - target: {fileID: 778515527027963145, guid: 2c32d6c92666c7b4b800e80e3243684d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 72161b0805029a140a0dbab5de1c7179, type: 2}
+    - target: {fileID: 2104936307323105605, guid: 2c32d6c92666c7b4b800e80e3243684d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b9d25d6ecf3cc564eae75f11e094dbb6, type: 2}
+    - target: {fileID: 7638083196229406387, guid: 2c32d6c92666c7b4b800e80e3243684d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 598ddbede8cf89344be5abd6c5b664d7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c32d6c92666c7b4b800e80e3243684d, type: 3}
 --- !u!4 &8469494196369617119 stripped

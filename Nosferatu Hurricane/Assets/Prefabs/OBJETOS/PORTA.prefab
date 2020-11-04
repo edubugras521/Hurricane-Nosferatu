@@ -38,6 +38,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5496592665078818086}
     m_Modifications:
+    - target: {fileID: -7690552662005275334, guid: 08eda5357de72b9468a6cb6142e42dcc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 878a38acddf9cb547a1f83f4d230eb80, type: 2}
     - target: {fileID: -4216859302048453862, guid: 08eda5357de72b9468a6cb6142e42dcc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,6 +103,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PORTA COM UV MAP
       objectReference: {fileID: 0}
+    - target: {fileID: 1755004296511196808, guid: 08eda5357de72b9468a6cb6142e42dcc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b3988feef91451e4abd8b6ceb8092cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08eda5357de72b9468a6cb6142e42dcc, type: 3}
 --- !u!4 &2273501643151385197 stripped
