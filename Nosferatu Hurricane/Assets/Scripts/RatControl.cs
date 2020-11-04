@@ -19,6 +19,9 @@ public class RatControl : MonoBehaviour
     public GameObject playerFOV;
 
     public ShadowControl shadowControl;
+    public PsychicControl psychicControl;
+
+    public BloodBar bloodBar;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,7 @@ public class RatControl : MonoBehaviour
         ratCollider = GetComponent<BoxCollider>();
         Player = GameObject.Find("Player");
         enemyControl = FindObjectOfType<EnemyEffects>();
+        bloodBar = FindObjectOfType<BloodBar>();
     }
 
     // Update is called once per frame
@@ -36,19 +40,21 @@ public class RatControl : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, -0.8f, transform.position.z);
 
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !ControlRat && !shadowControl.ControlShadow)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !ControlRat && !shadowControl.ControlShadow && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
         {
             ControlRat = true;
             ratCollider.enabled = true;
             ratFOV.SetActive(true);
             playerFOV.SetActive(false);
+            StartCoroutine("RatBloodDrain");
         }
-        else if (Input.GetKeyDown(KeyCode.LeftControl) && ControlRat && !shadowControl.ControlShadow)
+        else if (Input.GetKeyDown(KeyCode.LeftControl) && ControlRat && !shadowControl.ControlShadow && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
         {
             ControlRat = false;
             ratCollider.enabled = false;
             ratFOV.SetActive(false);
             playerFOV.SetActive(true);
+            StopCoroutine("RatBloodDrain");
         }
 
         if (ControlRat)
@@ -63,6 +69,14 @@ public class RatControl : MonoBehaviour
         {
             transform.position = new Vector3 (Player.transform.position.x,transform.position.y,Player.transform.position.z);
             transform.rotation = Player.transform.rotation;
+            StopCoroutine("RatBloodDrain");
+        }
+
+        if (bloodBar.BloodLeft <= 0)
+        {
+            ControlRat = false;
+            shadowControl.ControlShadow = false;
+            psychicControl.timer = 2;
         }
     }
 
@@ -87,6 +101,15 @@ public class RatControl : MonoBehaviour
         if (other.gameObject.CompareTag("Detection"))
         {
             enemyControl.followRat = false;
+        }
+    }
+
+    public IEnumerator RatBloodDrain()
+    {
+        while (true)
+        {
+            bloodBar.BloodLeft -= 0.03f;
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }

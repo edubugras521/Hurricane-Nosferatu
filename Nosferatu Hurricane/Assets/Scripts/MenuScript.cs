@@ -8,8 +8,7 @@ public class MenuScript : MonoBehaviour
 {
     public GameObject OptionsCanvas;
     public GameObject MenuCanvas;
-    public GameObject BackButton;
-    public GameObject CreditsImage;
+    public GameObject CreditsCanvas;
 
     public Sprite SourceSprite;
 
@@ -23,15 +22,14 @@ public class MenuScript : MonoBehaviour
     public void OptionsScreen()
     {
         Buttons[2].GetComponent<Image>().sprite = null;
+        Buttons[2].GetComponent<Image>().color = Color.clear;
         OptionsCanvas.SetActive(true);
         MenuCanvas.SetActive(false);
-        BackButton.SetActive(true);
     }
 
     public void CreditsScreen()
     {
-        CreditsImage.SetActive(true);
-        BackButton.SetActive(true);
+        CreditsCanvas.SetActive(true);
     }
 
     public void ExitGame()
@@ -42,9 +40,8 @@ public class MenuScript : MonoBehaviour
     public void BackToMenu()
     {
         OptionsCanvas.SetActive(false);
+        CreditsCanvas.SetActive(false);
         MenuCanvas.SetActive(true);
-        CreditsImage.SetActive(false);
-        BackButton.SetActive(false);
     }
 
     public void CursorOverStart()
