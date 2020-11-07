@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour
     public static bool resetLevel = false;
     public static bool gameOver = false;
     public int currentLevel;
+    public int unlockNextLevel;
 
     private RatControl ratControl;
 
@@ -29,6 +30,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        unlockNextLevel = PlayerPrefs.GetInt("UnlockLevel");
         currentLevel = PlayerPrefs.GetInt("CurrentLevel");
         ratControl = FindObjectOfType<RatControl>();
         LevelSelect();
@@ -111,11 +113,17 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if(currentLevel >= 0 && currentLevel < 3)
+        if (currentLevel == unlockNextLevel)
+        {
+            unlockNextLevel++;
+        }
+
+        if (currentLevel >= 0 && currentLevel < 3)
         {
             currentLevel++;
         }
 
+        PlayerPrefs.SetInt("UnlockLevel", unlockNextLevel);
         PlayerPrefs.SetInt("CurrentLevel", currentLevel);
         PlayerPrefs.SetFloat("RatAi", ratControl.ratAi);
         Debug.Log(currentLevel);

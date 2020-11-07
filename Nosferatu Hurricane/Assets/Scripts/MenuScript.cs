@@ -9,6 +9,7 @@ public class MenuScript : MonoBehaviour
     public GameObject OptionsCanvas;
     public GameObject MenuCanvas;
     public GameObject CreditsCanvas;
+    public GameObject LevelSelectCanvas;
 
     public Sprite SourceSprite;
 
@@ -16,7 +17,11 @@ public class MenuScript : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("LevelTutorial");
+        //SceneManager.LoadScene("LevelTutorial");
+        Buttons[0].GetComponent<Image>().sprite = null;
+        Buttons[0].GetComponent<Image>().color = Color.clear;
+        MenuCanvas.SetActive(false);
+        LevelSelectCanvas.SetActive(true);
     }
 
     public void OptionsScreen()
@@ -41,7 +46,41 @@ public class MenuScript : MonoBehaviour
     {
         OptionsCanvas.SetActive(false);
         CreditsCanvas.SetActive(false);
+        LevelSelectCanvas.SetActive(false);
         MenuCanvas.SetActive(true);
+    }
+
+    public void Level1()
+    {
+        if (PlayerPrefs.GetInt("UnlockLevel") >= 0)
+        {
+            PlayerPrefs.SetInt("CurrentLevel", 0);
+            SceneManager.LoadSceneAsync(1);
+        }
+    }
+    public void Level2()
+    {
+        if (PlayerPrefs.GetInt("UnlockLevel") >= 1)
+        {
+            PlayerPrefs.SetInt("CurrentLevel", 1);
+            SceneManager.LoadSceneAsync(1);
+        }
+    }
+    public void Level3()
+    {
+        if (PlayerPrefs.GetInt("UnlockLevel") >= 2)
+        {
+            PlayerPrefs.SetInt("CurrentLevel", 2);
+            SceneManager.LoadSceneAsync(1);
+        }
+    }
+    public void Level4()
+    {
+        if (PlayerPrefs.GetInt("UnlockLevel") >= 3)
+        {
+            PlayerPrefs.SetInt("CurrentLevel", 3);
+            SceneManager.LoadSceneAsync(1);
+        }
     }
 
     public void CursorOverStart()
