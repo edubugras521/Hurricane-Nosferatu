@@ -20,7 +20,6 @@ public class DoorControl : MonoBehaviour
     private bool isOpen = false;
     private bool isLocked = true;
     private bool doorSlammed = true;
-    private int currentLevel = 0;
 
     //public AudioSource Doorknob;
     //public AudioSource DoorOpening;
@@ -96,37 +95,36 @@ public class DoorControl : MonoBehaviour
 
     private void LevelCheck()
     {
-        currentLevel = LevelManager.currentLevel;
 
-        if(currentLevel == 0 && (isLocked != lockedLevel0))
+        if (PlayerPrefs.GetInt("CurrentLevel") == 0 && (isLocked != lockedLevel0))
         {
             isLocked = lockedLevel0;
         }
-        if (currentLevel == 1 && (isLocked != lockedLevel1))
+        if (PlayerPrefs.GetInt("CurrentLevel") == 1 && (isLocked != lockedLevel1))
         {
             isLocked = lockedLevel1;
         }
-        if (currentLevel == 2 && (isLocked != lockedLevel2))
+        if (PlayerPrefs.GetInt("CurrentLevel") == 2 && (isLocked != lockedLevel2))
         {
             isLocked = lockedLevel2;
         }
-        if (currentLevel == 3 && (isLocked != lockedLevel3))
+        if (PlayerPrefs.GetInt("CurrentLevel") == 3 && (isLocked != lockedLevel3))
         {
             isLocked = lockedLevel3;
         }
-        if (currentLevel == 4 && (isLocked != lockedLevel4))
+        if (PlayerPrefs.GetInt("CurrentLevel") == 4 && (isLocked != lockedLevel4))
         {
             isLocked = lockedLevel4;
         }
-        if (currentLevel == 5 && (isLocked != lockedLevel5))
+        if (PlayerPrefs.GetInt("CurrentLevel") == 5 && (isLocked != lockedLevel5))
         {
             isLocked = lockedLevel5;
         }
-        if (currentLevel == 6 && (isLocked != lockedLevel6))
+        if (PlayerPrefs.GetInt("CurrentLevel") == 6 && (isLocked != lockedLevel6))
         {
             isLocked = lockedLevel6;
         }
-        if (currentLevel == 7 && (isLocked != lockedLevel7))
+        if (PlayerPrefs.GetInt("CurrentLevel") == 7 && (isLocked != lockedLevel7))
         {
             isLocked = lockedLevel7;
         }

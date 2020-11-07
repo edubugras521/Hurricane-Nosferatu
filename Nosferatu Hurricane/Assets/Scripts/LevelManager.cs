@@ -21,9 +21,18 @@ public class LevelManager : MonoBehaviour
     public static bool levelFailed = false;
     public static bool resetLevel = false;
     public static bool gameOver = false;
-    public static int currentLevel = 0;
+    public int currentLevel;
+
+    private RatControl ratControl;
 
     // Update is called once per frame
+
+    void Start()
+    {
+        currentLevel = PlayerPrefs.GetInt("CurrentLevel");
+        ratControl = FindObjectOfType<RatControl>();
+        LevelSelect();
+    }
     void Update()
     {
         if (levelComplete && !levelFailed && !gameOver)
@@ -80,12 +89,16 @@ public class LevelManager : MonoBehaviour
 
     public void PlayerDetected()
     {
-        levelFailed = true;
-        failScreen.gameObject.SetActive(true);
+        if (!levelComplete)
+        {
+            levelFailed = true;
+            failScreen.gameObject.SetActive(true);
+        }
     }
 
     public void RetryLevel()
     {
+        ratControl.ratAi = PlayerPrefs.GetFloat("RatAi");
         levelComplete = false;
         levelFailed = false;
         resetLevel = false;
@@ -101,9 +114,25 @@ public class LevelManager : MonoBehaviour
         if(currentLevel >= 0 && currentLevel < 3)
         {
             currentLevel++;
-            Debug.Log(currentLevel);
         }
 
+        PlayerPrefs.SetInt("CurrentLevel", currentLevel);
+        PlayerPrefs.SetFloat("RatAi", ratControl.ratAi);
+        Debug.Log(currentLevel);
+        levelComplete = false;
+        levelFailed = false;
+        resetLevel = false;
+        killScreen.alpha = 0;
+        killScreen.gameObject.SetActive(false);
+        failScreen.alpha = 0;
+        failScreen.gameObject.SetActive(false);
+        TargetCheck();
+        GuardasCheck();
+        player.GetComponent<RespawnManager>().Respawn();
+    }
+
+    public void LevelSelect()
+    {
         levelComplete = false;
         levelFailed = false;
         resetLevel = false;

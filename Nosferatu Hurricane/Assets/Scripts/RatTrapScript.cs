@@ -5,22 +5,17 @@ using UnityEngine;
 public class RatTrapScript : MonoBehaviour
 {
     public GameObject[] ratTraps;
-    public int ratTrapAi; // prototipo, mudar depois
+    public int ratTrapAi;
 
     public List<int> RandomNotRepeat;
 
     public int randomNumber;
 
+    public RatControl ratControl;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (ratTrapAi >= ratTraps.Length)
-        {
-            ratTrapAi = ratTraps.Length;
-        }
-
-        PlayerPrefs.SetInt("RatAiLevel", ratTrapAi); // prototipo, mudar depois
-
         for (int i = 0; i < PlayerPrefs.GetInt("RatAiLevel"); i++)
         {
             randomNumber = UnityEngine.Random.Range(0, ratTraps.Length);
@@ -38,6 +33,16 @@ public class RatTrapScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ratTrapAi >= ratTraps.Length)
+        {
+            ratTrapAi = ratTraps.Length;
+        }
+        if (ratTrapAi < 0)
+        {
+            ratTrapAi = 0;
+        }
 
+        ratTrapAi = Mathf.RoundToInt(ratControl.ratAi/10 - 0.5f);
+        PlayerPrefs.SetInt("RatAiLevel", ratTrapAi);
     }
 }

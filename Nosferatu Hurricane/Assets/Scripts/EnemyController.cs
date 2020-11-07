@@ -29,7 +29,6 @@ public class EnemyController : MonoBehaviour
 	public bool activeLevel7 = true;
 
 	private bool isActive = false;
-	private int currentLevel = 0;
 
 	private GameObject closestMedBox;
 	private float footstepTimer = 0;
@@ -160,37 +159,35 @@ public class EnemyController : MonoBehaviour
 
 	private void LevelCheck()
 	{
-		currentLevel = LevelManager.currentLevel;
-
-		if (currentLevel == 0 && (isActive != activeLevel0))
+		if (PlayerPrefs.GetInt("CurrentLevel") == 0 && (isActive != activeLevel0))
 		{
 			isActive = activeLevel0;
 		}
-		if (currentLevel == 1 && (isActive != activeLevel1))
+		if (PlayerPrefs.GetInt("CurrentLevel") == 1 && (isActive != activeLevel1))
 		{
 			isActive = activeLevel1;
 		}
-		if (currentLevel == 2 && (isActive != activeLevel2))
+		if (PlayerPrefs.GetInt("CurrentLevel") == 2 && (isActive != activeLevel2))
 		{
 			isActive = activeLevel2;
 		}
-		if (currentLevel == 3 && (isActive != activeLevel3))
+		if (PlayerPrefs.GetInt("CurrentLevel") == 3 && (isActive != activeLevel3))
 		{
 			isActive = activeLevel3;
 		}
-		if (currentLevel == 4 && (isActive != activeLevel4))
+		if (PlayerPrefs.GetInt("CurrentLevel") == 4 && (isActive != activeLevel4))
 		{
 			isActive = activeLevel4;
 		}
-		if (currentLevel == 5 && (isActive != activeLevel5))
+		if (PlayerPrefs.GetInt("CurrentLevel") == 5 && (isActive != activeLevel5))
 		{
 			isActive = activeLevel5;
 		}
-		if (currentLevel == 6 && (isActive != activeLevel6))
+		if (PlayerPrefs.GetInt("CurrentLevel") == 6 && (isActive != activeLevel6))
 		{
 			isActive = activeLevel6;
 		}
-		if (currentLevel == 7 && (isActive != activeLevel7))
+		if (PlayerPrefs.GetInt("CurrentLevel") == 7 && (isActive != activeLevel7))
 		{
 			isActive = activeLevel7;
 		}

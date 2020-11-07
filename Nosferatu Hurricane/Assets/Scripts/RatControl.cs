@@ -22,10 +22,12 @@ public class RatControl : MonoBehaviour
     public PsychicControl psychicControl;
 
     public BloodBar bloodBar;
+    public float ratAi = -0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
+        ratAi = PlayerPrefs.GetFloat("RatAi");
         ratController = GetComponent<CharacterController>();
         ratCollider = GetComponent<BoxCollider>();
         Player = GameObject.Find("Player");
@@ -92,6 +94,15 @@ public class RatControl : MonoBehaviour
             ratCollider.enabled = false;
             ratFOV.SetActive(false);
             playerFOV.SetActive(true);
+            ratAi += 4;
+        }
+        if (other.gameObject.CompareTag("Rat Traps") && ControlRat)
+        {
+            ControlRat = false;
+            ratCollider.enabled = false;
+            ratFOV.SetActive(false);
+            playerFOV.SetActive(true);
+            ratAi += 2;
         }
     }
 
@@ -109,6 +120,7 @@ public class RatControl : MonoBehaviour
         while (true)
         {
             bloodBar.BloodLeft -= 0.03f;
+            ratAi += 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
     }

@@ -924,6 +924,7 @@ MonoBehaviour:
   guard1: {fileID: 232098701}
   guard2: {fileID: 1521858771}
   guard3: {fileID: 1894897959}
+  currentLevel: 0
 --- !u!4 &73303691
 Transform:
   m_ObjectHideFlags: 0
@@ -2033,7 +2034,7 @@ GameObject:
   - component: {fileID: 194069465}
   m_Layer: 0
   m_Name: RatTrap5
-  m_TagString: Untagged
+  m_TagString: Rat Traps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2060,7 +2061,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194069463}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -9252,7 +9253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &700220118
 Transform:
   m_ObjectHideFlags: 0
@@ -9296,9 +9297,10 @@ MonoBehaviour:
   - {fileID: 2048035815}
   - {fileID: 1605203923}
   - {fileID: 1241653563}
-  ratTrapAi: 4
+  ratTrapAi: 0
   RandomNotRepeat: 
   randomNumber: 0
+  ratControl: {fileID: 873992773}
 --- !u!1 &702264417
 GameObject:
   m_ObjectHideFlags: 0
@@ -9930,7 +9932,7 @@ GameObject:
   - component: {fileID: 767651842}
   m_Layer: 0
   m_Name: RatTrap2
-  m_TagString: Untagged
+  m_TagString: Rat Traps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9957,7 +9959,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767651840}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -10743,6 +10745,7 @@ MonoBehaviour:
   shadowControl: {fileID: 1170807568}
   psychicControl: {fileID: 998376250}
   bloodBar: {fileID: 0}
+  ratAi: 0
 --- !u!65 &873992774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16598,7 +16601,7 @@ GameObject:
   - component: {fileID: 1241653565}
   m_Layer: 0
   m_Name: RatTrap8
-  m_TagString: Untagged
+  m_TagString: Rat Traps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16625,7 +16628,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241653563}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -19042,7 +19045,7 @@ GameObject:
   - component: {fileID: 1470760138}
   m_Layer: 0
   m_Name: RatTrap4
-  m_TagString: Untagged
+  m_TagString: Rat Traps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19069,7 +19072,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470760136}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -22049,7 +22052,7 @@ GameObject:
   - component: {fileID: 1549289464}
   m_Layer: 0
   m_Name: RatTrap3
-  m_TagString: Untagged
+  m_TagString: Rat Traps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22076,7 +22079,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549289462}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -22796,7 +22799,7 @@ GameObject:
   - component: {fileID: 1605203925}
   m_Layer: 0
   m_Name: RatTrap7
-  m_TagString: Untagged
+  m_TagString: Rat Traps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22823,7 +22826,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605203923}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -22889,7 +22892,7 @@ GameObject:
   - component: {fileID: 1606537288}
   m_Layer: 0
   m_Name: RatTrap1
-  m_TagString: Untagged
+  m_TagString: Rat Traps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22916,7 +22919,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606537286}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -27316,7 +27319,7 @@ GameObject:
   - component: {fileID: 2048035817}
   m_Layer: 0
   m_Name: RatTrap6
-  m_TagString: Untagged
+  m_TagString: Rat Traps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27343,7 +27346,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048035815}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -29188,7 +29191,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 88ea501146e58f4469bf6ae16693cba6, type: 3}
 --- !u!1001 &6601208799314833820
 PrefabInstance:
@@ -29256,6 +29260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Alvo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976553888870397302, guid: 15085a68583085b469c646ab8b0dd7c6,
+        type: 3}
+      propertyPath: activeLevel1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15085a68583085b469c646ab8b0dd7c6, type: 3}

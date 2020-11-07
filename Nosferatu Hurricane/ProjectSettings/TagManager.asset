@@ -15,6 +15,7 @@ TagManager:
   - MedicineBox
   - Candle
   - Torch
+  - Rat Traps
   layers:
   - Default
   - TransparentFX
