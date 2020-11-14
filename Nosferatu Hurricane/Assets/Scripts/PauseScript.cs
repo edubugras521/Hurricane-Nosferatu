@@ -6,17 +6,22 @@ using UnityEngine.SceneManagement;
 public class PauseScript : MonoBehaviour
 {
     public GameObject pauseScreen;
+    private LevelManager levelManager;
+    public GameObject winScreen;
+    public GameObject loseScreen;
+
 
     // Start is called before the first frame update
     void Start()
     {
         pauseScreen.SetActive(false);
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !pauseScreen.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && !pauseScreen.activeSelf && !winScreen.activeSelf && !loseScreen.activeSelf)
         {
             pauseScreen.SetActive(true);
             Time.timeScale = 0;
@@ -42,7 +47,8 @@ public class PauseScript : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1;
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        levelManager.RetryLevel();
+        pauseScreen.SetActive(false);
     }
 
     public void ReturnToMenu()

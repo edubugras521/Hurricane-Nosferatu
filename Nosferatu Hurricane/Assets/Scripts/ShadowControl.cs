@@ -9,6 +9,7 @@ public class ShadowControl : MonoBehaviour
     private GameObject Player;
     private CapsuleCollider shadowCollider;
     private InteracaoShadow interacaoShadow;
+    private EnemyEffects enemyControl;
 
     Vector3 directionShadow = Vector3.zero;
 
@@ -21,11 +22,13 @@ public class ShadowControl : MonoBehaviour
     public RatControl ratControl;
     public PsychicControl psychicControl;
 
-    public BloodBar bloodBar;
+    private BloodBar bloodBar;
+    public float shadowAi = -0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
+        shadowAi = PlayerPrefs.GetFloat("ShadowAi");
         shadowController = GetComponent<CharacterController>();
         shadowCollider = GetComponent<CapsuleCollider>();
         interacaoShadow = GetComponent<InteracaoShadow>();
@@ -73,6 +76,7 @@ public class ShadowControl : MonoBehaviour
         {
             transform.position = new Vector3(Player.transform.position.x, 0, Player.transform.position.z);
             transform.rotation = Player.transform.rotation;
+            StopCoroutine("ShadowBloodDrain");
         }
 
         transform.forward = Vector3.RotateTowards(transform.forward, directionShadow, shadowVelRotacao * Time.deltaTime, 0.0f);
@@ -85,7 +89,28 @@ public class ShadowControl : MonoBehaviour
         while (true)
         {
             bloodBar.BloodLeft -= 0.03f;
+            shadowAi += 0.01f;
             yield return new WaitForSeconds(0.01f);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Guard") && ControlShadow)
+        {
+            ControlShadow = false;
+            shadowCollider.enabled = false;
+            shadowFOV.SetActive(false);
+            playerFOV.SetActive(true);
+            shadowAi += 5;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Detection"))
+        {
+            enemyControl.followRat = false;
         }
     }
 }

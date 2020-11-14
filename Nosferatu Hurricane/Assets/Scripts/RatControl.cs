@@ -21,7 +21,7 @@ public class RatControl : MonoBehaviour
     public ShadowControl shadowControl;
     public PsychicControl psychicControl;
 
-    public BloodBar bloodBar;
+    private BloodBar bloodBar;
     public float ratAi = -0.5f;
 
     // Start is called before the first frame update

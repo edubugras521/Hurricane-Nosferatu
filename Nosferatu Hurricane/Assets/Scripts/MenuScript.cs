@@ -34,7 +34,10 @@ public class MenuScript : MonoBehaviour
 
     public void CreditsScreen()
     {
+        Buttons[1].GetComponent<Image>().sprite = null;
+        Buttons[1].GetComponent<Image>().color = Color.clear;
         CreditsCanvas.SetActive(true);
+        MenuCanvas.SetActive(false);
     }
 
     public void ExitGame()

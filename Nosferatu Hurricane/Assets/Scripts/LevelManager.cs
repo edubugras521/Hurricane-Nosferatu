@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class LevelManager : MonoBehaviour
     public int unlockNextLevel;
 
     private RatControl ratControl;
+    private ShadowControl shadowControl;
+
+    private CandleScript candleScript;
+    private RatTrapScript ratTrapScript;
 
     // Update is called once per frame
 
@@ -33,6 +38,9 @@ public class LevelManager : MonoBehaviour
         unlockNextLevel = PlayerPrefs.GetInt("UnlockLevel");
         currentLevel = PlayerPrefs.GetInt("CurrentLevel");
         ratControl = FindObjectOfType<RatControl>();
+        shadowControl = FindObjectOfType<ShadowControl>();
+        candleScript = FindObjectOfType<CandleScript>();
+        ratTrapScript = FindObjectOfType<RatTrapScript>();
         LevelSelect();
     }
     void Update()
@@ -100,6 +108,7 @@ public class LevelManager : MonoBehaviour
 
     public void RetryLevel()
     {
+        shadowControl.shadowAi = PlayerPrefs.GetFloat("ShadowAi");
         ratControl.ratAi = PlayerPrefs.GetFloat("RatAi");
         levelComplete = false;
         levelFailed = false;
@@ -108,7 +117,7 @@ public class LevelManager : MonoBehaviour
         killScreen.gameObject.SetActive(false);
         failScreen.alpha = 0;
         failScreen.gameObject.SetActive(false);
-        player.GetComponent<RespawnManager>().Respawn();
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void NextLevel()
@@ -126,6 +135,9 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt("UnlockLevel", unlockNextLevel);
         PlayerPrefs.SetInt("CurrentLevel", currentLevel);
         PlayerPrefs.SetFloat("RatAi", ratControl.ratAi);
+        PlayerPrefs.SetFloat("ShadowAi", shadowControl.shadowAi);
+        PlayerPrefs.SetInt("CandleAiLevel", candleScript.candlesAi);
+        PlayerPrefs.SetInt("RatAiLevel", ratTrapScript.ratTrapAi);
         Debug.Log(currentLevel);
         levelComplete = false;
         levelFailed = false;
@@ -136,7 +148,7 @@ public class LevelManager : MonoBehaviour
         failScreen.gameObject.SetActive(false);
         TargetCheck();
         GuardasCheck();
-        player.GetComponent<RespawnManager>().Respawn();
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LevelSelect()

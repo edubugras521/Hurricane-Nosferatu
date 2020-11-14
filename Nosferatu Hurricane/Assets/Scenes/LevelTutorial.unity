@@ -5744,7 +5744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &452224547
 Transform:
   m_ObjectHideFlags: 0
@@ -5787,6 +5787,7 @@ MonoBehaviour:
   candlesAi: 0
   RandomNotRepeat: 
   randomNumber: 0
+  shadowControl: {fileID: 1170807568}
 --- !u!1 &452745494
 GameObject:
   m_ObjectHideFlags: 0
@@ -11431,7 +11432,6 @@ MonoBehaviour:
   playerFOV: {fileID: 1415374895435323944}
   shadowControl: {fileID: 1170807568}
   psychicControl: {fileID: 998376250}
-  bloodBar: {fileID: 0}
   ratAi: 0
 --- !u!65 &873992774
 BoxCollider:
@@ -15597,7 +15597,7 @@ MonoBehaviour:
   playerFOV: {fileID: 1415374895435323944}
   ratControl: {fileID: 873992773}
   psychicControl: {fileID: 998376250}
-  bloodBar: {fileID: 0}
+  shadowAi: -0.5
 --- !u!136 &1170807569
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24802,6 +24802,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 844468361}
+  winScreen: {fileID: 2128849313}
+  loseScreen: {fileID: 2128933043}
 --- !u!1001 &1703712552
 PrefabInstance:
   m_ObjectHideFlags: 0

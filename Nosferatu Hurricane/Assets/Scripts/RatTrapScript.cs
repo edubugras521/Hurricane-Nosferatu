@@ -43,6 +43,5 @@ public class RatTrapScript : MonoBehaviour
         }
 
         ratTrapAi = Mathf.RoundToInt(ratControl.ratAi/10 - 0.5f);
-        PlayerPrefs.SetInt("RatAiLevel", ratTrapAi);
     }
 }
