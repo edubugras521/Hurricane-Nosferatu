@@ -51,6 +51,8 @@ public class MenuScript : MonoBehaviour
         CreditsCanvas.SetActive(false);
         LevelSelectCanvas.SetActive(false);
         MenuCanvas.SetActive(true);
+        Buttons[7].GetComponent<Image>().sprite = null;
+        Buttons[7].GetComponent<Image>().color = Color.clear;
     }
 
     public void Level1()
@@ -126,5 +128,48 @@ public class MenuScript : MonoBehaviour
     {
         Buttons[3].GetComponent<Image>().sprite = null;
         Buttons[3].GetComponent<Image>().color = Color.clear;
+    }
+
+
+    public void CursorOverControls()
+    {
+        Buttons[4].GetComponent<Image>().sprite = SourceSprite;
+        Buttons[4].GetComponent<Image>().color = Color.white;
+    }
+    public void CursorOverTutorial()
+    {
+        Buttons[5].GetComponent<Image>().sprite = SourceSprite;
+        Buttons[5].GetComponent<Image>().color = Color.white;
+    }
+    public void CursorOverSound()
+    {
+        Buttons[6].GetComponent<Image>().sprite = SourceSprite;
+        Buttons[6].GetComponent<Image>().color = Color.white;
+    }
+    public void CursorOverBack()
+    {
+        Buttons[7].GetComponent<Image>().sprite = SourceSprite;
+        Buttons[7].GetComponent<Image>().color = Color.white;
+    }
+
+    public void CursorExitControls()
+    {
+        Buttons[4].GetComponent<Image>().sprite = null;
+        Buttons[4].GetComponent<Image>().color = Color.clear;
+    }
+    public void CursorExitTutorial()
+    {
+        Buttons[5].GetComponent<Image>().sprite = null;
+        Buttons[5].GetComponent<Image>().color = Color.clear;
+    }
+    public void CursorExitSound()
+    {
+        Buttons[6].GetComponent<Image>().sprite = null;
+        Buttons[6].GetComponent<Image>().color = Color.clear;
+    }
+    public void CursorExitBack()
+    {
+        Buttons[7].GetComponent<Image>().sprite = null;
+        Buttons[7].GetComponent<Image>().color = Color.clear;
     }
 }
