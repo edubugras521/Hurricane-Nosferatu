@@ -33,15 +33,17 @@ public class CandleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (candlesAi >= candles.Length)
-        {
-            candlesAi = candles.Length;
-        }
         if (candlesAi < 0)
         {
             candlesAi = 0;
         }
-
-        candlesAi = Mathf.RoundToInt(shadowControl.shadowAi / 10 - 0.5f);
+        else if (candlesAi >= candles.Length)
+        {
+            candlesAi = candles.Length;
+        }
+        else
+        {
+            candlesAi = Mathf.RoundToInt(shadowControl.shadowAi / 10 - 0.5f);
+        }
     }
 }

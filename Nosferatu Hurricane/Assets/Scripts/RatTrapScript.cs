@@ -33,15 +33,17 @@ public class RatTrapScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ratTrapAi >= ratTraps.Length)
-        {
-            ratTrapAi = ratTraps.Length;
-        }
         if (ratTrapAi < 0)
         {
             ratTrapAi = 0;
         }
-
-        ratTrapAi = Mathf.RoundToInt(ratControl.ratAi/10 - 0.5f);
+        else if (ratTrapAi >= ratTraps.Length - 1)
+        {
+            ratTrapAi = ratTraps.Length;
+        }
+        else
+        {
+            ratTrapAi = Mathf.RoundToInt(ratControl.ratAi / 10 - 0.5f);
+        }
     }
 }
