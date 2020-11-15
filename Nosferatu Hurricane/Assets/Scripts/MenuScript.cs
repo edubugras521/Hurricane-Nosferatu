@@ -14,6 +14,31 @@ public class MenuScript : MonoBehaviour
     public Sprite SourceSprite;
 
     public GameObject[] Buttons;
+    public GameObject[] Levels;
+
+
+    void Start()
+    {
+        if (PlayerPrefs.GetInt("UnlockLevel") >= 0)
+        {
+            Levels[0].GetComponent<Image>().color = Color.white;
+        }
+
+        if (PlayerPrefs.GetInt("UnlockLevel") >= 1)
+        {
+            Levels[1].GetComponent<Image>().color = Color.white;
+        }
+
+        if (PlayerPrefs.GetInt("UnlockLevel") >= 2)
+        {
+            Levels[2].GetComponent<Image>().color = Color.white;
+        }
+
+        if (PlayerPrefs.GetInt("UnlockLevel") >= 3)
+        {
+            Levels[3].GetComponent<Image>().color = Color.white;
+        }
+    }
 
     public void StartGame()
     {
