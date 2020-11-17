@@ -18,8 +18,7 @@ public class BloodBar : MonoBehaviour
     void Update()
     {
         if (BloodLeft >= 100) BloodLeft = 100;
-        if (BloodLeft <= 0) BloodLeft = 0;
-
-        BloodSlider.value = BloodLeft;
+        else if (BloodLeft <= 0) BloodLeft = 0;
+        else BloodSlider.value = BloodLeft;
     }
 }
