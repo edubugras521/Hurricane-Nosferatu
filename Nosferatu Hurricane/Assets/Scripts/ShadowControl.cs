@@ -105,12 +105,4 @@ public class ShadowControl : MonoBehaviour
             shadowAi += 5;
         }
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Detection"))
-        {
-            enemyControl.followRat = false;
-        }
-    }
 }
