@@ -13,6 +13,10 @@ public class Movimento : MonoBehaviour
     public RatControl ratControl;
     public ShadowControl shadowControl;
     public PsychicControl psychicControl;
+    public float detectionScaleWhenLit;
+
+    private static bool isInLight = false;
+    private GameObject[] guardfovs;
 
     Vector3 direcao = Vector3.zero;
     CharacterController controller;
@@ -26,6 +30,7 @@ public class Movimento : MonoBehaviour
         ratControl = FindObjectOfType<RatControl>();
         shadowControl = FindObjectOfType<ShadowControl>();
         psychicControl = FindObjectOfType<PsychicControl>();
+        guardfovs = GameObject.FindGameObjectsWithTag("Detection");
     }
 
     // Update is called once per frame
@@ -39,6 +44,21 @@ public class Movimento : MonoBehaviour
         transform.forward = Vector3.RotateTowards(transform.forward, direcao, velRotacao * Time.deltaTime, 0.0f);
 
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+
+        if (isInLight)
+        {
+            foreach (GameObject guardfov in guardfovs)
+            {
+                guardfov.transform.localScale = new Vector3(detectionScaleWhenLit, detectionScaleWhenLit, detectionScaleWhenLit);
+            }
+        }
+        else
+        {
+            foreach (GameObject guardfov in guardfovs)
+            {
+                guardfov.transform.localScale = new Vector3(1, 1, 1);
+            }
+        }
     }
 
     void Andar()
@@ -77,6 +97,27 @@ public class Movimento : MonoBehaviour
                 {
                         levelManager.GetComponent<LevelManager>().PlayerDetected();
                 }
+            }
+        }
+
+        if (outro.CompareTag("Candle"))
+        {
+            GameObject candle = outro.gameObject;
+            if (candle.GetComponent<CandleControl>().IsLit())
+            {
+                isInLight = true;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider outro)
+    {
+        if (outro.CompareTag("Candle"))
+        {
+            GameObject candle = outro.gameObject;
+            if (candle.GetComponent<CandleControl>().IsLit())
+            {
+                isInLight = false;
             }
         }
     }

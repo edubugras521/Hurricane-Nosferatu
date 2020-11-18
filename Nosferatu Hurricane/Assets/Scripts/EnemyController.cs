@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
 	public Transform goal;
 
 	public bool isTerrified = false;
+	public float terrorCureDelay;
 
 	public bool activeLevel0 = true;
 	public bool activeLevel1 = true;
@@ -29,6 +30,8 @@ public class EnemyController : MonoBehaviour
 	public bool activeLevel7 = true;
 
 	private bool isActive = false;
+	private bool isHealing = false;
+	private float terrorCureTimer;
 
 	private GameObject closestMedBox;
 	private float footstepTimer = 0;
@@ -48,7 +51,7 @@ public class EnemyController : MonoBehaviour
 		LevelCheck();
 		gameObject.SetActive(isActive);
 
-		if (!isTerrified)
+		if (!isTerrified && !isHealing)
         {
 			playerDistance = Vector3.Distance(player.position, transform.position);
 
@@ -83,6 +86,24 @@ public class EnemyController : MonoBehaviour
 			else
 			{
 				footstepTimer -= Time.deltaTime;
+			}
+		}
+
+		if (isHealing && isTerrified)
+        {
+			if(terrorCureTimer > 0)
+            {
+				terrorCureTimer -= Time.deltaTime;
+				Mathf.Clamp(terrorCureTimer, 0, terrorCureDelay);
+            }
+            else
+            {
+				isTerrified = false;
+				agent.speed = 2.5f;
+				isHealing = false;
+				Debug.Log("healed");
+				agent.destination = navPoint[destPoint].position;
+				agent.isStopped = false;
 			}
 		}
 
@@ -133,15 +154,18 @@ public class EnemyController : MonoBehaviour
 		if (other.gameObject.CompareTag("Psychic"))
 		{
 			isTerrified = true;
+			agent.speed = 4f;
 			closestMedBox = null;
 			closestMedBox = FindClosestMedicine();
 			agent.destination = closestMedBox.transform.position;
 		}
 
-		if (other.gameObject.CompareTag("MedicineBox") && isTerrified)
+		if (other.gameObject.CompareTag("MedicineBox") && isTerrified && !isHealing)
 		{
-			isTerrified = false;
-			agent.destination = navPoint[destPoint].position;
+			terrorCureTimer = terrorCureDelay;
+			isHealing = true;
+			agent.isStopped = true;
+			Debug.Log("healing start");
 		}
 	}
 

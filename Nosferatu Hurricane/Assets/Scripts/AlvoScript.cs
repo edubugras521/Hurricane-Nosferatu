@@ -13,18 +13,32 @@ public class AlvoScript : MonoBehaviour
     public bool activeLevel6 = true;
     public bool activeLevel7 = true;
 
+    public GameObject sleepEffect;
+
     private bool isActive = false;
+    private float effectTimer = 0;
+    private float effectInterval = 0.75f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
         LevelCheck();
+
+        if (effectTimer <= 0)
+        {
+            Instantiate(sleepEffect, new Vector3(transform.position.x, (transform.position.y + 2f), transform.position.z), Quaternion.identity);
+            effectTimer = effectInterval;
+        }
+        else
+        {
+            effectTimer -= Time.deltaTime;
+        }
+
     }
 
     public void LevelCheck()

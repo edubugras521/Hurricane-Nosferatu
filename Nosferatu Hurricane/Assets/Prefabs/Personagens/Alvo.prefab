@@ -118,6 +118,8 @@ MonoBehaviour:
   activeLevel5: 0
   activeLevel6: 0
   activeLevel7: 0
+  sleepEffect: {fileID: 1715001517889697749, guid: 23d026f88757bd24fbd1ea3c3387e878,
+    type: 3}
 --- !u!114 &1888758269238053214
 MonoBehaviour:
   m_ObjectHideFlags: 0

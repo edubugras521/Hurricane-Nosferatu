@@ -162,7 +162,7 @@ public class LevelManager : MonoBehaviour
         failScreen.gameObject.SetActive(false);
         TargetCheck();
         GuardasCheck();
-        player.GetComponent<RespawnManager>().Respawn();
+        //player.GetComponent<RespawnManager>().Respawn();
     }
 
     public void TargetCheck()

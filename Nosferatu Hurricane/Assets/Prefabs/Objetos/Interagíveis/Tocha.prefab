@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8563607201397190454}
   - component: {fileID: 3024337081225317171}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Tocha Luz
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2552676725698090178}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Tocha
   m_TagString: Torch
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 8557043190391821010}
   - component: {fileID: 8936437084228134341}
   - component: {fileID: 4764892054579923905}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Tocha Fogo
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 5595217429539347845}
   - component: {fileID: 677857723499658049}
   - component: {fileID: 7022252217878689365}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Tocha Base
   m_TagString: Torch
   m_Icon: {fileID: 0}
