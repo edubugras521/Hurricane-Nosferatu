@@ -11,15 +11,21 @@ public class MenuScript : MonoBehaviour
     public GameObject CreditsCanvas;
     public GameObject LevelSelectCanvas;
     public GameObject TutorialCanvas;
+    public GameObject SoundCanvas;
+    public GameObject ControlsCanvas;
 
     public Sprite SourceSprite;
 
     public GameObject[] Buttons;
     public GameObject[] Levels;
 
+    public Slider musicSlider;
+
 
     void Start()
     {
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 100);
+
         if (PlayerPrefs.GetInt("UnlockLevel") >= 0)
         {
             Levels[0].GetComponent<Image>().color = Color.white;
@@ -39,6 +45,11 @@ public class MenuScript : MonoBehaviour
         {
             Levels[3].GetComponent<Image>().color = Color.white;
         }
+    }
+
+    void Update()
+    {
+        PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
     }
 
     public void StartGame()
@@ -86,13 +97,32 @@ public class MenuScript : MonoBehaviour
     {
         OptionsCanvas.SetActive(true);
         TutorialCanvas.SetActive(false);
+        SoundCanvas.SetActive(false);
+        ControlsCanvas.SetActive(false);
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        Buttons[4].GetComponent<Image>().sprite = null;
+        Buttons[4].GetComponent<Image>().color = Color.clear;
         Buttons[5].GetComponent<Image>().sprite = null;
         Buttons[5].GetComponent<Image>().color = Color.clear;
+        Buttons[6].GetComponent<Image>().sprite = null;
+        Buttons[6].GetComponent<Image>().color = Color.clear;
+    }
+
+    public void ControlsScreen()
+    {
+        ControlsCanvas.SetActive(true);
+        OptionsCanvas.SetActive(false);
     }
 
     public void TutorialScreen()
     {
         TutorialCanvas.SetActive(true);
+        OptionsCanvas.SetActive(false);
+    }
+
+    public void SoundScreen()
+    {
+        SoundCanvas.SetActive(true);
         OptionsCanvas.SetActive(false);
     }
 
