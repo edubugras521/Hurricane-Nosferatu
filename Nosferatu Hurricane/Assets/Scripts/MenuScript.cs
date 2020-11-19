@@ -82,6 +82,14 @@ public class MenuScript : MonoBehaviour
         Buttons[7].GetComponent<Image>().color = Color.clear;
     }
 
+    public void BackToOptionsMenu()
+    {
+        OptionsCanvas.SetActive(true);
+        TutorialCanvas.SetActive(false);
+        Buttons[5].GetComponent<Image>().sprite = null;
+        Buttons[5].GetComponent<Image>().color = Color.clear;
+    }
+
     public void TutorialScreen()
     {
         TutorialCanvas.SetActive(true);
