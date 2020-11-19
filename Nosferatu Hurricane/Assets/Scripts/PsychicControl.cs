@@ -7,6 +7,7 @@ public class PsychicControl : MonoBehaviour
     private GameObject psychic;
     public bool activateTimer;
     public float timer;
+    public Animator animator;
 
     private BloodBar bloodBar;
 
@@ -32,6 +33,7 @@ public class PsychicControl : MonoBehaviour
             {
                 psychic.SetActive(true);
                 activateTimer = true;
+                animator.SetBool("Aterrorizando", true);
                 StartCoroutine("PsychicBloodDrain");
             }
         }
@@ -40,6 +42,7 @@ public class PsychicControl : MonoBehaviour
             psychic.SetActive(false);
             activateTimer = false;
             timer = 0;
+            animator.SetBool("Aterrorizando", false);
             StopCoroutine("PsychicBloodDrain");
         }
     }

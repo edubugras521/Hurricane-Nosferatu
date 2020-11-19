@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: b512d692dba990e498589a7b71c921cc
+guid: 436ecab001daf234b9360fae80f96718
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert4
-    second: {fileID: 2100000, guid: 27d909b74499de04087a8cb8c240e4b3, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -39,7 +34,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 20
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -85,8 +80,8 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.19999999
-    rootMotionBoneName: HIP_J
+    globalScale: 1
+    rootMotionBoneName: Base_Joint
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

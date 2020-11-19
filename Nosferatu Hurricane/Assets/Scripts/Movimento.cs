@@ -6,6 +6,7 @@ public class Movimento : MonoBehaviour
 {
     public float velocidade = 4f;
     public float velRotacao = 10f;
+    public Animator animator;
     public GameObject levelManager;
     public GameObject footstepEffects;
     public float footstepInterval;
@@ -17,10 +18,12 @@ public class Movimento : MonoBehaviour
 
     private static bool isInLight = false;
     private GameObject[] guardfovs;
+    private float footstepTimer = 0;
+    private float cocadinhaTimer;
+    private float cocadinhaIntervalo;
 
     Vector3 direcao = Vector3.zero;
     CharacterController controller;
-    private float footstepTimer = 0;
 
 
     // Start is called before the first frame update
@@ -39,6 +42,11 @@ public class Movimento : MonoBehaviour
         if ((Input.GetButton("Horizontal") || Input.GetButton("Vertical")) && !LevelManager.levelComplete && !LevelManager.levelFailed && !ratControl.ControlRat && !shadowControl.ControlShadow && !psychicControl.activateTimer)
         {
             Andar();
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
         }
 
         transform.forward = Vector3.RotateTowards(transform.forward, direcao, velRotacao * Time.deltaTime, 0.0f);
