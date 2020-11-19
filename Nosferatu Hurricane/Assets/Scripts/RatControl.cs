@@ -40,8 +40,6 @@ public class RatControl : MonoBehaviour
     {
         transform.forward = Vector3.RotateTowards(transform.forward, directionRat, ratVelRotacao * Time.deltaTime, 0.0f);
 
-        transform.position = new Vector3(transform.position.x, -0.8f, transform.position.z);
-
         if (Input.GetKeyDown(KeyCode.LeftControl) && !ControlRat && !shadowControl.ControlShadow && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
         {
             ControlRat = true;
@@ -66,10 +64,11 @@ public class RatControl : MonoBehaviour
             directionRat *= ratVelocity;
 
             ratController.Move(directionRat * Time.deltaTime);
+            transform.position = new Vector3 (transform.position.x, -0.8f, transform.position.z);
         }
         else
         {
-            transform.position = new Vector3 (Player.transform.position.x,transform.position.y,Player.transform.position.z);
+            transform.position = new Vector3 (Player.transform.position.x, -2, Player.transform.position.z);
             transform.rotation = Player.transform.rotation;
             StopCoroutine("RatBloodDrain");
         }

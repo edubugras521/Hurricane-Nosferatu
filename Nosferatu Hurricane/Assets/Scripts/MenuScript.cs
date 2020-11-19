@@ -10,6 +10,7 @@ public class MenuScript : MonoBehaviour
     public GameObject MenuCanvas;
     public GameObject CreditsCanvas;
     public GameObject LevelSelectCanvas;
+    public GameObject TutorialCanvas;
 
     public Sprite SourceSprite;
 
@@ -75,9 +76,24 @@ public class MenuScript : MonoBehaviour
         OptionsCanvas.SetActive(false);
         CreditsCanvas.SetActive(false);
         LevelSelectCanvas.SetActive(false);
+        TutorialCanvas.SetActive(false);
         MenuCanvas.SetActive(true);
         Buttons[7].GetComponent<Image>().sprite = null;
         Buttons[7].GetComponent<Image>().color = Color.clear;
+    }
+
+    public void BackToOptionsMenu()
+    {
+        OptionsCanvas.SetActive(true);
+        TutorialCanvas.SetActive(false);
+        Buttons[5].GetComponent<Image>().sprite = null;
+        Buttons[5].GetComponent<Image>().color = Color.clear;
+    }
+
+    public void TutorialScreen()
+    {
+        TutorialCanvas.SetActive(true);
+        OptionsCanvas.SetActive(false);
     }
 
     public void Level1()
