@@ -6,12 +6,14 @@ public class EnemyController : MonoBehaviour
 {
 
 	public Transform player;
+	public Animator animator;
 	public float playerDistance;
 	public float awareAI = 10f;
 	public float AIMoveSpeed;
 	public float damping = 6.0f;
 	public bool isPatrol;
 	public GameObject footstepEffects;
+	public GameObject drinkingEffects;
 	public Transform[] navPoint;
 	public UnityEngine.AI.NavMeshAgent agent;
 	public int destPoint = 0;
@@ -25,9 +27,6 @@ public class EnemyController : MonoBehaviour
 	public bool activeLevel2 = true;
 	public bool activeLevel3 = true;
 	public bool activeLevel4 = true;
-	public bool activeLevel5 = true;
-	public bool activeLevel6 = true;
-	public bool activeLevel7 = true;
 
 	private bool isActive = false;
 	private bool isHealing = false;
@@ -36,6 +35,8 @@ public class EnemyController : MonoBehaviour
 	private GameObject closestMedBox;
 	private float footstepTimer = 0;
 	private float footstepInterval = 0.5f;
+	private float drinkingTimer = 0;
+	private float drinkingInterval = 1.0f;
 
 	void Start()
 	{
@@ -76,7 +77,7 @@ public class EnemyController : MonoBehaviour
 				GotoNextPoint();
 		}
 
-		if (isPatrol)
+		if (isPatrol && !isHealing)
         {
 			if (footstepTimer <= 0)
 			{
@@ -87,6 +88,8 @@ public class EnemyController : MonoBehaviour
 			{
 				footstepTimer -= Time.deltaTime;
 			}
+
+			animator.SetBool("isMoving", true);
 		}
 
 		if (isHealing && isTerrified)
@@ -95,15 +98,27 @@ public class EnemyController : MonoBehaviour
             {
 				terrorCureTimer -= Time.deltaTime;
 				Mathf.Clamp(terrorCureTimer, 0, terrorCureDelay);
-            }
+
+				if (drinkingTimer <= 0)
+				{
+					Instantiate(drinkingEffects, transform.position, Quaternion.identity);
+					drinkingTimer = drinkingInterval;
+				}
+				else
+				{
+					drinkingTimer -= Time.deltaTime;
+				}
+			}
             else
             {
 				isTerrified = false;
 				agent.speed = 2.5f;
+				animator.SetFloat("moveSpeed", 1f);
 				isHealing = false;
 				Debug.Log("healed");
 				agent.destination = navPoint[destPoint].position;
 				agent.isStopped = false;
+				animator.SetBool("isMoving", true);
 			}
 		}
 
@@ -154,7 +169,8 @@ public class EnemyController : MonoBehaviour
 		if (other.gameObject.CompareTag("Psychic"))
 		{
 			isTerrified = true;
-			agent.speed = 4f;
+			agent.speed = 5f;
+			animator.SetFloat("moveSpeed", 2f);
 			closestMedBox = null;
 			closestMedBox = FindClosestMedicine();
 			agent.destination = closestMedBox.transform.position;
@@ -165,6 +181,7 @@ public class EnemyController : MonoBehaviour
 			terrorCureTimer = terrorCureDelay;
 			isHealing = true;
 			agent.isStopped = true;
+			animator.SetBool("isMoving", false);
 			Debug.Log("healing start");
 		}
 	}
@@ -202,18 +219,6 @@ public class EnemyController : MonoBehaviour
 		if (PlayerPrefs.GetInt("CurrentLevel") == 4 && (isActive != activeLevel4))
 		{
 			isActive = activeLevel4;
-		}
-		if (PlayerPrefs.GetInt("CurrentLevel") == 5 && (isActive != activeLevel5))
-		{
-			isActive = activeLevel5;
-		}
-		if (PlayerPrefs.GetInt("CurrentLevel") == 6 && (isActive != activeLevel6))
-		{
-			isActive = activeLevel6;
-		}
-		if (PlayerPrefs.GetInt("CurrentLevel") == 7 && (isActive != activeLevel7))
-		{
-			isActive = activeLevel7;
 		}
 	}
 }

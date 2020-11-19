@@ -36,6 +36,7 @@ public class Interacao : MonoBehaviour
                 if (Input.GetButtonDown("Interact"))
                 {
                     levelManager.GetComponent<LevelManager>().KilledTarget();
+                    InspectText.text = "";
                 }
             }
 
@@ -47,6 +48,7 @@ public class Interacao : MonoBehaviour
                 if (Input.GetButtonDown("Interact"))
                 {
                     targetObject.GetComponent<DoorControl>().ToggleDoor();
+                    InspectText.text = "";
                 }
             }
 
@@ -85,6 +87,8 @@ public class Interacao : MonoBehaviour
                     if (Input.GetButtonDown("Interact"))
                     {
                         targetObject.GetComponent<CandleControl>().TurnOff();
+                        Player.GetComponent<Movimento>().isInLight = false;
+                        InspectText.text = "";
                     }
                 }
                 
@@ -93,13 +97,15 @@ public class Interacao : MonoBehaviour
             if (hit.collider.CompareTag("Torch"))
             {
                 targetObject = hit.collider.gameObject;
-                if (targetObject.GetComponent<TorchControl>().IsLit())
+                if (targetObject.GetComponent<CandleControl>().IsLit())
                 {
                     InspectText.text = "[E]: Apagar Tocha";
 
                     if (Input.GetButtonDown("Interact"))
                     {
-                        targetObject.GetComponent<TorchControl>().TurnOff();
+                        targetObject.GetComponent<CandleControl>().TurnOff();
+                        Player.GetComponent<Movimento>().isInLight = false;
+                        InspectText.text = "";
                     }
                 }   
             }

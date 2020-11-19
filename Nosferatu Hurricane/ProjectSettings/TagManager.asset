@@ -16,6 +16,7 @@ TagManager:
   - Candle
   - Torch
   - Rat Traps
+  - Light
   layers:
   - Default
   - TransparentFX

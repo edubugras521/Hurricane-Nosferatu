@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 751738612104841989}
   m_Layer: 0
   m_Name: Vela Luz
-  m_TagString: Candle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -134,9 +134,10 @@ GameObject:
   - component: {fileID: 6760612734733717720}
   - component: {fileID: 4150962489140791920}
   - component: {fileID: 1925922616660324867}
+  - component: {fileID: 4012693270986739896}
   m_Layer: 0
   m_Name: Vela Pavil
-  m_TagString: Candle
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -204,6 +205,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &4012693270986739896
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250621026782393338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4737788561818251083
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +230,7 @@ GameObject:
   - component: {fileID: 648743121283712434}
   m_Layer: 0
   m_Name: Vela Alcance
-  m_TagString: Candle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -309,7 +323,6 @@ GameObject:
   - component: {fileID: 8713916064884345024}
   - component: {fileID: 2676487931211413678}
   - component: {fileID: 1281633569833311673}
-  - component: {fileID: 229500507996497531}
   m_Layer: 0
   m_Name: Vela Cera
   m_TagString: Candle
@@ -406,19 +419,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleLight: {fileID: 3901671179581007510}
---- !u!135 &229500507996497531
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5297253733856119034}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Center: {x: 0, y: 0, z: 0.01038171}
+  candleRangeLight: {fileID: 4737788561818251083}
+  candleFuse: {fileID: 4250621026782393338}
+  fuseDark: {fileID: 2100000, guid: e82edad7b9d01ff4f863c0a5edfc7670, type: 2}
+  fuseLit: {fileID: 2100000, guid: a82632b40fc115d43a54995867349d68, type: 2}
 --- !u!1 &5902710589192856869
 GameObject:
   m_ObjectHideFlags: 0

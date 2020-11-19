@@ -15,8 +15,9 @@ public class Movimento : MonoBehaviour
     public ShadowControl shadowControl;
     public PsychicControl psychicControl;
     public float detectionScaleWhenLit;
+    public CanvasGroup litOverlay;
 
-    private static bool isInLight = false;
+    public bool isInLight = false;
     private GameObject[] guardfovs;
     private float footstepTimer = 0;
     private float cocadinhaTimer;
@@ -34,6 +35,7 @@ public class Movimento : MonoBehaviour
         shadowControl = FindObjectOfType<ShadowControl>();
         psychicControl = FindObjectOfType<PsychicControl>();
         guardfovs = GameObject.FindGameObjectsWithTag("Detection");
+        cocadinhaIntervalo = Random.Range(10.0f, 30.0f);
     }
 
     // Update is called once per frame
@@ -47,6 +49,18 @@ public class Movimento : MonoBehaviour
         else
         {
             animator.SetBool("isMoving", false);
+            if(cocadinhaTimer > 0)
+            {
+                cocadinhaTimer -= Time.deltaTime;
+                cocadinhaTimer = Mathf.Clamp(cocadinhaTimer, 0, cocadinhaIntervalo);
+                animator.SetFloat("cocadinha_timer", cocadinhaTimer);
+            }
+            else
+            {
+                cocadinhaIntervalo = Random.Range(5.0f, 20.0f);
+                cocadinhaTimer = cocadinhaIntervalo;
+                animator.SetFloat("cocadinha_timer", cocadinhaTimer);
+            }
         }
 
         transform.forward = Vector3.RotateTowards(transform.forward, direcao, velRotacao * Time.deltaTime, 0.0f);
@@ -59,12 +73,24 @@ public class Movimento : MonoBehaviour
             {
                 guardfov.transform.localScale = new Vector3(detectionScaleWhenLit, detectionScaleWhenLit, detectionScaleWhenLit);
             }
+
+            if(litOverlay.alpha < 1)
+            {
+                litOverlay.alpha += Time.deltaTime;
+                Mathf.Clamp(litOverlay.alpha, 0, 1);
+            }
         }
         else
         {
             foreach (GameObject guardfov in guardfovs)
             {
                 guardfov.transform.localScale = new Vector3(1, 1, 1);
+            }
+
+            if (litOverlay.alpha > 0)
+            {
+                litOverlay.alpha -= Time.deltaTime;
+                Mathf.Clamp(litOverlay.alpha, 0, 1);
             }
         }
     }
@@ -107,26 +133,29 @@ public class Movimento : MonoBehaviour
                 }
             }
         }
+    }
 
-        if (outro.CompareTag("Candle"))
+    private void OnTriggerStay(Collider outro)
+    {
+        if (outro.CompareTag("Light"))
         {
-            GameObject candle = outro.gameObject;
+            GameObject candle = outro.transform.parent.gameObject;
             if (candle.GetComponent<CandleControl>().IsLit())
             {
                 isInLight = true;
+            }
+            else
+            {
+                isInLight = false;
             }
         }
     }
 
     private void OnTriggerExit(Collider outro)
     {
-        if (outro.CompareTag("Candle"))
+        if (outro.CompareTag("Light"))
         {
-            GameObject candle = outro.gameObject;
-            if (candle.GetComponent<CandleControl>().IsLit())
-            {
-                isInLight = false;
-            }
+            isInLight = false;
         }
     }
 }

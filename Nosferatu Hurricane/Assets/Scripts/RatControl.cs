@@ -17,6 +17,7 @@ public class RatControl : MonoBehaviour
 
     public GameObject ratFOV;
     public GameObject playerFOV;
+    public Animator animator;
 
     public ShadowControl shadowControl;
     public PsychicControl psychicControl;
@@ -62,6 +63,16 @@ public class RatControl : MonoBehaviour
             directionRat = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             directionRat = Vector3.ClampMagnitude(directionRat, 1);
             directionRat *= ratVelocity;
+
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                animator.SetBool("isMoving", true);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
+
 
             ratController.Move(directionRat * Time.deltaTime);
             transform.position = new Vector3 (transform.position.x, -0.8f, transform.position.z);

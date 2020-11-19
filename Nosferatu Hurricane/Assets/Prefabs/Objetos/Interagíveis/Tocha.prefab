@@ -134,9 +134,10 @@ GameObject:
   - component: {fileID: 8557043190391821010}
   - component: {fileID: 8936437084228134341}
   - component: {fileID: 4764892054579923905}
+  - component: {fileID: 1824296354014748534}
   m_Layer: 0
   m_Name: Tocha Fogo
-  m_TagString: Wall
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,6 +154,7 @@ Transform:
   m_LocalScale: {x: 1.1464845, y: 1.1459115, z: 0.10244838}
   m_Children:
   - {fileID: 8563607201397190454}
+  - {fileID: 8778231507703642353}
   m_Father: {fileID: 2949512766528248951}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -203,6 +205,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!135 &1824296354014748534
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6580471776351852283}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.45
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8154905055182909340
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +230,7 @@ GameObject:
   - component: {fileID: 7170382010528859246}
   - component: {fileID: 5595217429539347845}
   - component: {fileID: 677857723499658049}
-  - component: {fileID: 7022252217878689365}
+  - component: {fileID: 2209579337176852959}
   m_Layer: 0
   m_Name: Tocha Base
   m_TagString: Torch
@@ -299,7 +314,7 @@ CapsuleCollider:
   m_Height: 0.03
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7022252217878689365
+--- !u!114 &2209579337176852959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,10 +323,103 @@ MonoBehaviour:
   m_GameObject: {fileID: 8154905055182909340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bcc320b808f24f4eb94c211e7c42e4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bb23ada6b49b4848a3aa09adf521d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torchLight: {fileID: 1324366511104858129}
-  torchEmbers: {fileID: 6580471776351852283}
-  litMaterial: {fileID: 2100000, guid: a82632b40fc115d43a54995867349d68, type: 2}
-  dimMaterial: {fileID: 2100000, guid: e82edad7b9d01ff4f863c0a5edfc7670, type: 2}
+  candleLight: {fileID: 1324366511104858129}
+  candleRangeLight: {fileID: 8886263099575370377}
+  candleFuse: {fileID: 6580471776351852283}
+  fuseDark: {fileID: 2100000, guid: e82edad7b9d01ff4f863c0a5edfc7670, type: 2}
+  fuseLit: {fileID: 2100000, guid: a82632b40fc115d43a54995867349d68, type: 2}
+--- !u!1 &8886263099575370377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8778231507703642353}
+  - component: {fileID: 9017139593809222600}
+  m_Layer: 0
+  m_Name: Tocha Alcance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!4 &8778231507703642353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886263099575370377}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0, y: 0, z: -0.148}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8557043190391821010}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!108 &9017139593809222600
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886263099575370377}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 0.60784316, b: 0, a: 1}
+  m_Intensity: 3
+  m_Range: 5
+  m_SpotAngle: 104.73645
+  m_InnerSpotAngle: 1
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 2
+    m_NormalBias: 0
+    m_NearPlane: 0.08017595
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0

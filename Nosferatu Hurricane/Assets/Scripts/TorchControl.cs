@@ -5,24 +5,29 @@ using UnityEngine;
 public class TorchControl : MonoBehaviour
 {
     public GameObject torchLight;
-    public GameObject torchEmbers;
-    public Material litMaterial;
-    public Material dimMaterial;
+    public GameObject torchFuse;
+
+    public Material torchDark;
+    public Material torchLit;
 
     private bool isLit = true;
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void TurnOff()
     {
         isLit = false;
-        torchEmbers.GetComponent<Renderer>().material = dimMaterial;
         torchLight.GetComponent<Light>().enabled = false;
+        torchFuse.GetComponent<SphereCollider>().enabled = false;
+        torchFuse.GetComponent<Renderer>().material = torchDark;
     }
+
+    public void TurnOn()
+    {
+        isLit = true;
+        torchLight.GetComponent<Light>().enabled = true;
+        torchFuse.GetComponent<SphereCollider>().enabled = true;
+        torchFuse.GetComponent<Renderer>().material = torchLit;
+    }
+
     public bool IsLit()
     {
         return isLit;

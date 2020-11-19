@@ -9,9 +9,6 @@ public class AlvoScript : MonoBehaviour
     public bool activeLevel2 = true;
     public bool activeLevel3 = true;
     public bool activeLevel4 = true;
-    public bool activeLevel5 = true;
-    public bool activeLevel6 = true;
-    public bool activeLevel7 = true;
 
     public GameObject sleepEffect;
 
@@ -67,21 +64,6 @@ public class AlvoScript : MonoBehaviour
         if (PlayerPrefs.GetInt("CurrentLevel") == 4 && (isActive != activeLevel4))
         {
             isActive = activeLevel4;
-        }
-
-        if (PlayerPrefs.GetInt("CurrentLevel") == 5 && (isActive != activeLevel5))
-        {
-            isActive = activeLevel5;
-        }
-
-        if (PlayerPrefs.GetInt("CurrentLevel") == 6 && (isActive != activeLevel6))
-        {
-            isActive = activeLevel6;
-        }
-
-        if (PlayerPrefs.GetInt("CurrentLevel") == 7 && (isActive != activeLevel7))
-        {
-            isActive = activeLevel7;
         }
 
         if (isActive)

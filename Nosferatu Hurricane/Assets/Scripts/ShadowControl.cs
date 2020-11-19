@@ -18,6 +18,8 @@ public class ShadowControl : MonoBehaviour
 
     public GameObject shadowFOV;
     public GameObject playerFOV;
+    public GameObject shadowModel;
+    public Animator animator;
 
     public RatControl ratControl;
     public PsychicControl psychicControl;
@@ -47,6 +49,7 @@ public class ShadowControl : MonoBehaviour
         {
             ControlShadow = true;
             shadowCollider.enabled = true;
+            shadowModel.SetActive(true);
             Player.GetComponent<Interacao>().enabled = false;
             interacaoShadow.enabled = true;
             shadowFOV.SetActive(true);
@@ -57,6 +60,7 @@ public class ShadowControl : MonoBehaviour
         {
             ControlShadow = false;
             shadowCollider.enabled = false;
+            shadowModel.SetActive(false);
             Player.GetComponent<Interacao>().enabled = true;
             interacaoShadow.enabled = false;
             shadowFOV.SetActive(false);
@@ -69,6 +73,15 @@ public class ShadowControl : MonoBehaviour
             directionShadow = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             directionShadow = Vector3.ClampMagnitude(directionShadow, 1);
             directionShadow *= shadowVelocity;
+
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                animator.SetBool("isMoving", true);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
 
             shadowController.Move(directionShadow * Time.deltaTime);
         }

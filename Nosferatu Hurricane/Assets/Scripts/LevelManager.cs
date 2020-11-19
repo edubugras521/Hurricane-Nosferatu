@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public CanvasGroup killScreen;
     public CanvasGroup failScreen;
     public CanvasGroup finalScreen;
+    public Animator assassinationAnimator;
     public GameObject alvo0;
     public GameObject alvo1;
     public GameObject alvo2;
@@ -50,10 +51,11 @@ public class LevelManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             if (killScreen.alpha < 1)
             {
-                killScreen.alpha += (1f * Time.deltaTime);
+                killScreen.alpha += Time.deltaTime;
             }
             else
             {
+                assassinationAnimator.SetBool("playAnimation", true);
                 resetLevel = true;
             }
         }
@@ -63,7 +65,7 @@ public class LevelManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             if (failScreen.alpha < 1)
             {
-                failScreen.alpha += (1f * Time.deltaTime);
+                failScreen.alpha += Time.deltaTime;
             }
             else
             {
@@ -76,7 +78,8 @@ public class LevelManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             if (finalScreen.alpha < 1)
             {
-                finalScreen.alpha += (1f * Time.deltaTime);
+                assassinationAnimator.SetBool("playAnimation", true);
+                finalScreen.alpha += Time.deltaTime;
             }
         }
 
@@ -85,7 +88,7 @@ public class LevelManager : MonoBehaviour
     public void KilledTarget()
     {
 
-        if (currentLevel == 3)
+        if (currentLevel == 4)
         {
             levelComplete = true;
             gameOver = true;
@@ -149,6 +152,7 @@ public class LevelManager : MonoBehaviour
         TargetCheck();
         GuardasCheck();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        assassinationAnimator.SetBool("playAnimation", false);
     }
 
     public void LevelSelect()

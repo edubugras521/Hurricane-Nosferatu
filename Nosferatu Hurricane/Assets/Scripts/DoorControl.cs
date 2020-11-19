@@ -13,9 +13,6 @@ public class DoorControl : MonoBehaviour
     public bool lockedLevel2 = true;
     public bool lockedLevel3 = true;
     public bool lockedLevel4 = true;
-    public bool lockedLevel5 = true;
-    public bool lockedLevel6 = true;
-    public bool lockedLevel7 = true;
 
     private bool isOpen = false;
     private bool isLocked = true;
@@ -115,18 +112,6 @@ public class DoorControl : MonoBehaviour
         if (PlayerPrefs.GetInt("CurrentLevel") == 4 && (isLocked != lockedLevel4))
         {
             isLocked = lockedLevel4;
-        }
-        if (PlayerPrefs.GetInt("CurrentLevel") == 5 && (isLocked != lockedLevel5))
-        {
-            isLocked = lockedLevel5;
-        }
-        if (PlayerPrefs.GetInt("CurrentLevel") == 6 && (isLocked != lockedLevel6))
-        {
-            isLocked = lockedLevel6;
-        }
-        if (PlayerPrefs.GetInt("CurrentLevel") == 7 && (isLocked != lockedLevel7))
-        {
-            isLocked = lockedLevel7;
         }
     }
 }
