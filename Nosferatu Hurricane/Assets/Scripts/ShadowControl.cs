@@ -20,6 +20,7 @@ public class ShadowControl : MonoBehaviour
     public GameObject playerFOV;
     public GameObject shadowModel;
     public Animator animator;
+    public AudioSource sfxSource;
 
     public RatControl ratControl;
     public PsychicControl psychicControl;
@@ -55,6 +56,7 @@ public class ShadowControl : MonoBehaviour
             shadowFOV.SetActive(true);
             playerFOV.SetActive(false);
             StartCoroutine("ShadowBloodDrain");
+            sfxSource.Play();
         }
         else if (Input.GetKeyDown(KeyCode.LeftShift) && ControlShadow && !ratControl.ControlRat && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
         {
@@ -66,6 +68,7 @@ public class ShadowControl : MonoBehaviour
             shadowFOV.SetActive(false);
             playerFOV.SetActive(true);
             StopCoroutine("ShadowBloodDrain");
+            sfxSource.Stop();
         }
 
         if (ControlShadow)

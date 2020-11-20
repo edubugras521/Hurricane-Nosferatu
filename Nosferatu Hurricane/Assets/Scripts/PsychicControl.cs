@@ -8,6 +8,7 @@ public class PsychicControl : MonoBehaviour
     public bool activateTimer;
     public float timer;
     public Animator animator;
+    public AudioSource sfxSource;
 
     private BloodBar bloodBar;
 
@@ -35,6 +36,7 @@ public class PsychicControl : MonoBehaviour
                 activateTimer = true;
                 animator.SetBool("Aterrorizando", true);
                 StartCoroutine("PsychicBloodDrain");
+                sfxSource.Play();
             }
         }
         else if(timer >= 1)

@@ -6,10 +6,14 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public GameObject player;
+    public CanvasGroup intermissionScreen;
     public CanvasGroup killScreen;
     public CanvasGroup failScreen;
     public CanvasGroup finalScreen;
     public Animator assassinationAnimator;
+    public AudioSource sfxWin;
+    public AudioSource sfxLose;
+    public AudioSource sfxFinal;
     public GameObject alvo0;
     public GameObject alvo1;
     public GameObject alvo2;
@@ -78,8 +82,11 @@ public class LevelManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             if (finalScreen.alpha < 1)
             {
-                assassinationAnimator.SetBool("playAnimation", true);
                 finalScreen.alpha += Time.deltaTime;
+            }
+            else
+            {
+                assassinationAnimator.SetBool("playAnimation", true);
             }
         }
 
@@ -93,11 +100,13 @@ public class LevelManager : MonoBehaviour
             levelComplete = true;
             gameOver = true;
             finalScreen.gameObject.SetActive(true);
+            if (!sfxFinal.isPlaying) sfxFinal.Play();
             return;
         }
 
         levelComplete = true;
         killScreen.gameObject.SetActive(true);
+        if (!sfxWin.isPlaying) sfxWin.Play();
     }
 
     public void PlayerDetected()
@@ -106,6 +115,7 @@ public class LevelManager : MonoBehaviour
         {
             levelFailed = true;
             failScreen.gameObject.SetActive(true);
+            if(!sfxLose.isPlaying) sfxLose.Play();
         }
     }
 
@@ -121,6 +131,8 @@ public class LevelManager : MonoBehaviour
         failScreen.alpha = 0;
         failScreen.gameObject.SetActive(false);
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        if (sfxLose.isPlaying) sfxLose.Stop();
+        if (sfxWin.isPlaying) sfxWin.Stop();
     }
 
     public void NextLevel()
@@ -130,7 +142,7 @@ public class LevelManager : MonoBehaviour
             unlockNextLevel++;
         }
 
-        if (currentLevel >= 0 && currentLevel < 3)
+        if (currentLevel >= 0 && currentLevel < 4)
         {
             currentLevel++;
         }
@@ -153,6 +165,8 @@ public class LevelManager : MonoBehaviour
         GuardasCheck();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         assassinationAnimator.SetBool("playAnimation", false);
+        sfxLose.Stop();
+        sfxWin.Stop();
     }
 
     public void LevelSelect()

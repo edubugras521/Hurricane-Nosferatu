@@ -18,6 +18,7 @@ public class RatControl : MonoBehaviour
     public GameObject ratFOV;
     public GameObject playerFOV;
     public Animator animator;
+    public AudioSource sfxSource;
 
     public ShadowControl shadowControl;
     public PsychicControl psychicControl;
@@ -48,6 +49,7 @@ public class RatControl : MonoBehaviour
             ratFOV.SetActive(true);
             playerFOV.SetActive(false);
             StartCoroutine("RatBloodDrain");
+            sfxSource.Play();
         }
         else if (Input.GetKeyDown(KeyCode.LeftControl) && ControlRat && !shadowControl.ControlShadow && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
         {
