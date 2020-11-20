@@ -45,11 +45,17 @@ public class MenuScript : MonoBehaviour
         {
             Levels[3].GetComponent<Image>().color = Color.white;
         }
+
+        if (PlayerPrefs.GetInt("UnlockLevel") >= 4)
+        {
+            Levels[4].GetComponent<Image>().color = Color.white;
+        }
     }
 
     void Update()
     {
         PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
+        AudioListener.volume = PlayerPrefs.GetFloat("MusicVolume") / 100;
     }
 
     public void StartGame()
@@ -155,6 +161,15 @@ public class MenuScript : MonoBehaviour
         if (PlayerPrefs.GetInt("UnlockLevel") >= 3)
         {
             PlayerPrefs.SetInt("CurrentLevel", 3);
+            SceneManager.LoadSceneAsync(1);
+        }
+    }
+
+    public void Level5()
+    {
+        if (PlayerPrefs.GetInt("UnlockLevel") >= 4)
+        {
+            PlayerPrefs.SetInt("CurrentLevel", 4);
             SceneManager.LoadSceneAsync(1);
         }
     }

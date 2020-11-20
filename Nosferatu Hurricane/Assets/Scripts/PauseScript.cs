@@ -52,6 +52,8 @@ public class PauseScript : MonoBehaviour
             soundScreen.SetActive(false);
             Time.timeScale = 1;
         }
+
+        AudioListener.volume = PlayerPrefs.GetFloat("MusicVolume") / 100;
     }
 
     public void ReturnToGame()
