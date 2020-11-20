@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 7969286892592558544}
   - component: {fileID: 7169620596840888233}
   - component: {fileID: 2892084401440861751}
-  - component: {fileID: 1954576400895074261}
   m_Layer: 0
   m_Name: RATOEIRA ARMADILHA
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &7969286892592558544
 Transform:
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1954576400895074261
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3684014435542680208}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.66840875, y: 0.32232136, z: 0.0731723}
-  m_Center: {x: -0.33419186, y: 0.12677543, z: -0.0011463022}
 --- !u!1 &5444906314938357364
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,10 +93,10 @@ GameObject:
   - component: {fileID: 7215149653231785559}
   m_Layer: 0
   m_Name: RATOEIRA
-  m_TagString: Wall
+  m_TagString: Rat Traps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1017194750233892490
 Transform:
@@ -182,11 +168,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5444906314938357364}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8569661, y: 0.72242874, z: 0.0737211}
-  m_Center: {x: -0.33422872, y: -0.00831543, z: 0.07192534}
+  m_Size: {x: 0.85696614, y: 0.72242874, z: 1.2009305}
+  m_Center: {x: -0.33423066, y: -0.008315365, z: -0.491679}
 --- !u!1 &9006317327246332799
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,13 +184,12 @@ GameObject:
   - component: {fileID: 940401891096417570}
   - component: {fileID: 7739024513650100468}
   - component: {fileID: 8535092852029327876}
-  - component: {fileID: 1376630711185649932}
   m_Layer: 0
   m_Name: RATOEIRA RODA
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &940401891096417570
 Transform:
@@ -268,19 +253,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1376630711185649932
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9006317327246332799}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.62874705, y: 0.036593698, z: 0.066397876}
-  m_Center: {x: -0.33424214, y: -0.00010438076, z: 0.00019608809}
 --- !u!1 &9134639277068186264
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2476561081181609116}
   m_Layer: 0
-  m_Name: RATOEIRA
+  m_Name: Ratoeira
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,9 +276,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9134639277068186264}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.92, y: 0, z: -86.27}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.64930457, y: 0.6493046, z: 0.64930457}
   m_Children:
   - {fileID: 1017194750233892490}
   m_Father: {fileID: 0}

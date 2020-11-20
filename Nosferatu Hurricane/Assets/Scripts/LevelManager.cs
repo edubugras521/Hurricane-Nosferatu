@@ -18,10 +18,12 @@ public class LevelManager : MonoBehaviour
     public GameObject alvo1;
     public GameObject alvo2;
     public GameObject alvo3;
+    public GameObject alvo4;
     public GameObject guard0;
     public GameObject guard1;
     public GameObject guard2;
     public GameObject guard3;
+    public GameObject guard4;
 
     public static bool levelComplete = false;
     public static bool levelFailed = false;
@@ -189,6 +191,7 @@ public class LevelManager : MonoBehaviour
         alvo1.SetActive(true);
         alvo2.SetActive(true);
         alvo3.SetActive(true);
+        alvo4.SetActive(true);
     }
 
     public void GuardasCheck()
@@ -197,6 +200,7 @@ public class LevelManager : MonoBehaviour
         guard1.SetActive(true);
         guard2.SetActive(true);
         guard3.SetActive(true);
+        guard4.SetActive(true);
     }
     public void ExitGame()
     {
