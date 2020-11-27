@@ -55,6 +55,7 @@ public class LevelManager : MonoBehaviour
         if (levelComplete && !levelFailed && !gameOver)
         {
             Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
             if (killScreen.alpha < 1)
             {
                 killScreen.alpha += Time.deltaTime;
@@ -69,6 +70,7 @@ public class LevelManager : MonoBehaviour
         if (!levelComplete && levelFailed && !gameOver)
         {
             Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
             if (failScreen.alpha < 1)
             {
                 failScreen.alpha += Time.deltaTime;
@@ -82,6 +84,7 @@ public class LevelManager : MonoBehaviour
         if (levelComplete && !levelFailed && gameOver)
         {
             Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
             if (finalScreen.alpha < 1)
             {
                 finalScreen.alpha += Time.deltaTime;
@@ -135,6 +138,7 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         if (sfxLose.isPlaying) sfxLose.Stop();
         if (sfxWin.isPlaying) sfxWin.Stop();
+        Cursor.visible = false;
     }
 
     public void NextLevel()
@@ -169,6 +173,7 @@ public class LevelManager : MonoBehaviour
         assassinationAnimator.SetBool("playAnimation", false);
         sfxLose.Stop();
         sfxWin.Stop();
+        Cursor.visible = false;
     }
 
     public void LevelSelect()
@@ -182,6 +187,7 @@ public class LevelManager : MonoBehaviour
         failScreen.gameObject.SetActive(false);
         TargetCheck();
         GuardasCheck();
+        Cursor.visible = false;
         //player.GetComponent<RespawnManager>().Respawn();
     }
 

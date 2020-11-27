@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
-	public Transform player;
+	public Transform rat;
 	public Animator animator;
-	public float playerDistance;
+	public float ratDistance;
 	public float awareAI = 10f;
 	public float AIMoveSpeed;
 	public float damping = 6.0f;
@@ -54,30 +54,35 @@ public class EnemyController : MonoBehaviour
 
 		if (!isTerrified && !isHealing)
         {
-			playerDistance = Vector3.Distance(player.position, transform.position);
-
-			if (playerDistance < awareAI)
-			{
-				LookAtPlayer();
-				Debug.Log("Seen");
-			}
-
-			if (playerDistance < awareAI)
-			{
-				if (playerDistance > 2f)
-				{
-					Chase();
-				}
-				else
-					GotoNextPoint();
-			}
-
-
-			if (agent.remainingDistance < 0.5f)
+			if (agent.remainingDistance < 0.1f)
 				GotoNextPoint();
+
+            if (rat.GetComponent<RatControl>().ControlRat)
+            {
+				ratDistance = Vector3.Distance(rat.position, transform.position);
+
+				if (ratDistance < awareAI)
+				{
+					Debug.Log("Rat Seen");
+
+					if (ratDistance > 0.1f)
+					{
+						agent.speed = 4f;
+						animator.SetFloat("moveSpeed", (4f / 2.5f));
+						Chase();
+					}
+					else
+					{
+						agent.speed = 2.5f;
+						animator.SetFloat("moveSpeed", 1f);
+						GotoNextPoint();
+					}
+
+				} 
+			}
 		}
 
-		if (isPatrol && !isHealing)
+		if (isPatrol && !isHealing && isActive)
         {
 			if (footstepTimer <= 0)
 			{
@@ -124,11 +129,6 @@ public class EnemyController : MonoBehaviour
 
 	}
 
-	void LookAtPlayer()
-	{
-		transform.LookAt(player);
-	}
-
 
 	void GotoNextPoint()
 	{
@@ -141,7 +141,7 @@ public class EnemyController : MonoBehaviour
 
 	void Chase()
 	{
-		transform.Translate(Vector3.forward * AIMoveSpeed * Time.deltaTime);
+		agent.destination = rat.position;
 	}
 
 	public GameObject FindClosestMedicine()

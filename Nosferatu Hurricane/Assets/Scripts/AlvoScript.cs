@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AlvoScript : MonoBehaviour
 {
-    public bool activeLevel0 = true;
-    public bool activeLevel1 = true;
-    public bool activeLevel2 = true;
-    public bool activeLevel3 = true;
-    public bool activeLevel4 = true;
+    public bool activeLevel0 = false;
+    public bool activeLevel1 = false;
+    public bool activeLevel2 = false;
+    public bool activeLevel3 = false;
+    public bool activeLevel4 = false;
 
     public GameObject sleepEffect;
 
@@ -26,16 +26,19 @@ public class AlvoScript : MonoBehaviour
     {
         LevelCheck();
 
-        if (effectTimer <= 0)
+        if (isActive)
         {
-            Instantiate(sleepEffect, new Vector3(transform.position.x, (transform.position.y + 2f), transform.position.z), Quaternion.identity);
-            effectTimer = effectInterval;
+            if (effectTimer <= 0)
+            {
+                Instantiate(sleepEffect, new Vector3(transform.position.x, (transform.position.y + 2f), transform.position.z), Quaternion.identity);
+                effectTimer = effectInterval;
+            }
+            else
+            {
+                effectTimer -= Time.deltaTime;
+            }
         }
-        else
-        {
-            effectTimer -= Time.deltaTime;
-        }
-
+        
     }
 
     public void LevelCheck()

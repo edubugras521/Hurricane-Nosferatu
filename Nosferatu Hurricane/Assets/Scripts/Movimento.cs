@@ -22,6 +22,7 @@ public class Movimento : MonoBehaviour
     private float footstepTimer = 0;
     private float cocadinhaTimer;
     private float cocadinhaIntervalo;
+    private bool godMode = false;
 
     Vector3 direcao = Vector3.zero;
     CharacterController controller;
@@ -61,6 +62,11 @@ public class Movimento : MonoBehaviour
                 cocadinhaTimer = cocadinhaIntervalo;
                 animator.SetFloat("cocadinha_timer", cocadinhaTimer);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            godMode = !godMode;
         }
 
         transform.forward = Vector3.RotateTowards(transform.forward, direcao, velRotacao * Time.deltaTime, 0.0f);
@@ -117,7 +123,7 @@ public class Movimento : MonoBehaviour
 
     void OnTriggerEnter(Collider outro)
     {
-        if (outro.CompareTag("Detection"))
+        if (outro.CompareTag("Detection") && !godMode)
         {
             GameObject guard = outro.transform.parent.gameObject;
             bool guardTerrified = guard.GetComponent<EnemyController>().IsGuardTerrified();

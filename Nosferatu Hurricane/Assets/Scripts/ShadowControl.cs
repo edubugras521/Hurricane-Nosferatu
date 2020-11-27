@@ -15,6 +15,7 @@ public class ShadowControl : MonoBehaviour
 
     public float shadowVelocity;
     public float shadowVelRotacao;
+    public LayerMask guardLayerMask;
 
     public GameObject shadowFOV;
     public GameObject playerFOV;
@@ -46,7 +47,7 @@ public class ShadowControl : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !ControlShadow && !ratControl.ControlRat && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
+        if (Input.GetKeyDown(KeyCode.K) && !ControlShadow && !ratControl.ControlRat && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
         {
             ControlShadow = true;
             shadowCollider.enabled = true;
@@ -58,7 +59,18 @@ public class ShadowControl : MonoBehaviour
             StartCoroutine("ShadowBloodDrain");
             sfxSource.Play();
         }
-        else if (Input.GetKeyDown(KeyCode.LeftShift) && ControlShadow && !ratControl.ControlRat && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
+        else if (Input.GetKeyDown(KeyCode.K) && ControlShadow && !ratControl.ControlRat && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
+        {
+            ControlShadow = false;
+            shadowCollider.enabled = false;
+            shadowModel.SetActive(false);
+            Player.GetComponent<Interacao>().enabled = true;
+            interacaoShadow.enabled = false;
+            shadowFOV.SetActive(false);
+            playerFOV.SetActive(true);
+            StopCoroutine("ShadowBloodDrain");
+            sfxSource.Stop();
+        }else if (bloodBar.BloodLeft <= 0)
         {
             ControlShadow = false;
             shadowCollider.enabled = false;
@@ -112,13 +124,30 @@ public class ShadowControl : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Guard") && ControlShadow)
+        if (other.gameObject.CompareTag("Detection") && ControlShadow)
         {
-            ControlShadow = false;
-            shadowCollider.enabled = false;
-            shadowFOV.SetActive(false);
-            playerFOV.SetActive(true);
-            shadowAi += 5;
+            GameObject guard = other.transform.parent.gameObject;
+            bool guardTerrified = guard.GetComponent<EnemyController>().IsGuardTerrified();
+            Vector3 guardDirection = transform.position - guard.transform.position;
+            Ray ray = new Ray(guard.transform.position, guardDirection.normalized);
+            Debug.DrawRay(ray.origin, ray.direction * 15, Color.magenta);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 15, ~guardLayerMask))
+            {
+                if (hit.transform == transform && !guardTerrified)
+                {
+                    ControlShadow = false;
+                    shadowCollider.enabled = false;
+                    shadowModel.SetActive(false);
+                    Player.GetComponent<Interacao>().enabled = true;
+                    interacaoShadow.enabled = false;
+                    shadowFOV.SetActive(false);
+                    playerFOV.SetActive(true);
+                    StopCoroutine("ShadowBloodDrain");
+                    sfxSource.Stop();
+                    shadowAi += 5;
+                }
+            }
         }
     }
 }

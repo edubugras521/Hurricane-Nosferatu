@@ -42,7 +42,7 @@ public class RatControl : MonoBehaviour
     {
         transform.forward = Vector3.RotateTowards(transform.forward, directionRat, ratVelRotacao * Time.deltaTime, 0.0f);
 
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !ControlRat && !shadowControl.ControlShadow && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
+        if (Input.GetKeyDown(KeyCode.J) && !ControlRat && !shadowControl.ControlShadow && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
         {
             ControlRat = true;
             ratCollider.enabled = true;
@@ -51,7 +51,7 @@ public class RatControl : MonoBehaviour
             StartCoroutine("RatBloodDrain");
             sfxSource.Play();
         }
-        else if (Input.GetKeyDown(KeyCode.LeftControl) && ControlRat && !shadowControl.ControlShadow && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
+        else if (Input.GetKeyDown(KeyCode.J) && ControlRat && !shadowControl.ControlShadow && !psychicControl.activateTimer && bloodBar.BloodLeft > 0)
         {
             ControlRat = false;
             ratCollider.enabled = false;

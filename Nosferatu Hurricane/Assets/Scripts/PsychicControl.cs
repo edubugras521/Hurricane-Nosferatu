@@ -28,7 +28,7 @@ public class PsychicControl : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && timer < 1 && !activateTimer)
+        if (Input.GetKeyDown(KeyCode.L) && timer < 1 && !activateTimer)
         {
             if (bloodBar.BloodLeft >= 20)
             {
