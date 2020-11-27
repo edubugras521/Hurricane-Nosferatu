@@ -13,6 +13,7 @@ public class MenuScript : MonoBehaviour
     public GameObject TutorialCanvas;
     public GameObject SoundCanvas;
     public GameObject ControlsCanvas;
+    public GameObject ResetProgressCanvas;
 
     public Sprite SourceSprite;
 
@@ -130,6 +131,25 @@ public class MenuScript : MonoBehaviour
     {
         SoundCanvas.SetActive(true);
         OptionsCanvas.SetActive(false);
+    }
+
+    public void ResetProgress()
+    {
+        ResetProgressCanvas.SetActive(true);
+        OptionsCanvas.SetActive(false);
+    }
+
+    public void ConfirmReset()
+    {
+        PlayerPrefs.DeleteAll();
+        ResetProgressCanvas.SetActive(false);
+        OptionsCanvas.SetActive(true);
+    }
+
+    public void DenyReset()
+    {
+        ResetProgressCanvas.SetActive(false);
+        OptionsCanvas.SetActive(true);
     }
 
     public void Level1()
